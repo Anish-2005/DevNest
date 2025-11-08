@@ -9,14 +9,15 @@ export default function ThreeScene() {
   useEffect(() => {
     if (!containerRef.current) return
 
-    // Basic scene
+    // Stranger Things dark scene
     const scene = new THREE.Scene()
+    scene.fog = new THREE.Fog(0x0a0a0a, 1, 20)
     const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000)
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.setSize(window.innerWidth, window.innerHeight)
-    renderer.setClearColor(0x000000, 0) // transparent
+    renderer.setClearColor(0x0a0a0a, 0.95) // dark, slightly opaque
 
     // Ensure the canvas covers the screen and doesn't capture pointer events
     const canvas = renderer.domElement
@@ -32,23 +33,27 @@ export default function ThreeScene() {
 
     camera.position.z = 6
 
-    // Central icosahedron
+    // Central pulsing sphere (Stranger Things portal/gate aesthetic)
     const geometry = new THREE.IcosahedronGeometry(2, 4)
     const material = new THREE.MeshStandardMaterial({
-      color: 0x8b5cf6,
-      emissive: 0x3b0764,
-      roughness: 0.2,
-      metalness: 0.1,
+      color: 0x8b0000,
+      emissive: 0xff0000,
+      emissiveIntensity: 0.3,
+      roughness: 0.6,
+      metalness: 0.2,
     })
     const mesh = new THREE.Mesh(geometry, material)
     scene.add(mesh)
 
-    // Wireframe overlay
-    const wireframe = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(2.1, 4)), new THREE.LineBasicMaterial({ color: 0x06b6d4, opacity: 0.25, transparent: true }))
+    // Eerie red wireframe
+    const wireframe = new THREE.LineSegments(
+      new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(2.1, 4)), 
+      new THREE.LineBasicMaterial({ color: 0xff0000, opacity: 0.4, transparent: true })
+    )
     scene.add(wireframe)
 
-    // Enhanced Particles System - More particles with varying sizes
-    const particleCount = 800
+    // Eerie Stranger Things Particles - Floating spores/ash
+    const particleCount = 600
     const positions = new Float32Array(particleCount * 3)
     const colors = new Float32Array(particleCount * 3)
     const sizes = new Float32Array(particleCount)
@@ -58,23 +63,26 @@ export default function ThreeScene() {
       positions[i * 3 + 1] = (Math.random() - 0.5) * 50
       positions[i * 3 + 2] = (Math.random() - 0.5) * 50
       
-      // Gradient colors from purple to cyan to pink
+      // Red, dark red, and yellow particles (fire/danger aesthetic)
       const colorChoice = Math.random()
-      if (colorChoice < 0.33) {
-        colors[i * 3] = 0.54 + Math.random() * 0.2     // R
-        colors[i * 3 + 1] = 0.36 + Math.random() * 0.2 // G
-        colors[i * 3 + 2] = 0.96                       // B (purple)
-      } else if (colorChoice < 0.66) {
-        colors[i * 3] = 0.02                           // R
-        colors[i * 3 + 1] = 0.71 + Math.random() * 0.2 // G
-        colors[i * 3 + 2] = 0.83 + Math.random() * 0.1 // B (cyan)
+      if (colorChoice < 0.5) {
+        // Bright red
+        colors[i * 3] = 1.0     // R
+        colors[i * 3 + 1] = 0.0 // G
+        colors[i * 3 + 2] = 0.0 // B (bright red)
+      } else if (colorChoice < 0.75) {
+        // Dark blood red
+        colors[i * 3] = 0.54                           // R
+        colors[i * 3 + 1] = 0.0 // G
+        colors[i * 3 + 2] = 0.0 // B (dark red)
       } else {
-        colors[i * 3] = 0.92 + Math.random() * 0.08    // R
-        colors[i * 3 + 1] = 0.25 + Math.random() * 0.2 // G
-        colors[i * 3 + 2] = 0.68 + Math.random() * 0.2 // B (pink)
+        // Eerie yellow/amber
+        colors[i * 3] = 1.0    // R
+        colors[i * 3 + 1] = 0.92 + Math.random() * 0.08 // G
+        colors[i * 3 + 2] = 0.23 // B (yellow)
       }
       
-      sizes[i] = Math.random() * 0.15 + 0.05
+      sizes[i] = Math.random() * 0.18 + 0.04
     }
     
     const particlesGeometry = new THREE.BufferGeometry()
@@ -124,11 +132,16 @@ export default function ThreeScene() {
       scene.add(shape)
     }
 
-    // Lights
-    const light = new THREE.PointLight(0xffffff, 1.1)
+    // Eerie red lighting (Stranger Things aesthetic)
+    const light = new THREE.PointLight(0xff0000, 1.2)
     light.position.set(5, 5, 5)
     scene.add(light)
-    const ambient = new THREE.AmbientLight(0xffffff, 0.6)
+    
+    const light2 = new THREE.PointLight(0x8b0000, 0.8)
+    light2.position.set(-5, -3, 3)
+    scene.add(light2)
+    
+    const ambient = new THREE.AmbientLight(0x220000, 0.3)
     scene.add(ambient)
 
     // Interaction state

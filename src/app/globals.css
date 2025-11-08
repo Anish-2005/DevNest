@@ -1,42 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=VT323&family=Creepster&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.08 0 0);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.12 0 0);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.12 0 0);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.65 0.3 280);
+  /* Stranger Things Dark Palette */
+  --background: oklch(0.05 0 0);
+  --foreground: oklch(0.95 0.05 30);
+  --card: oklch(0.08 0.02 30);
+  --card-foreground: oklch(0.95 0.05 30);
+  --popover: oklch(0.08 0.02 30);
+  --popover-foreground: oklch(0.95 0.05 30);
+  --primary: oklch(0.55 0.25 25);
   --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.45 0.2 290);
+  --secondary: oklch(0.65 0.2 50);
   --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.25 0 0);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.55 0.25 200);
+  --muted: oklch(0.18 0.02 30);
+  --muted-foreground: oklch(0.55 0.05 30);
+  --accent: oklch(0.50 0.28 25);
   --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
+  --destructive: oklch(0.55 0.30 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.22 0 0);
-  --input: oklch(0.15 0 0);
-  --ring: oklch(0.65 0.3 280);
-  --chart-1: oklch(0.65 0.3 280);
-  --chart-2: oklch(0.6 0.28 200);
-  --chart-3: oklch(0.7 0.25 150);
-  --chart-4: oklch(0.55 0.3 280);
-  --chart-5: oklch(0.75 0.2 100);
+  --border: oklch(0.15 0.02 30);
+  --input: oklch(0.10 0.02 30);
+  --ring: oklch(0.55 0.25 25);
+  --chart-1: oklch(0.55 0.25 25);
+  --chart-2: oklch(0.65 0.2 50);
+  --chart-3: oklch(0.45 0.15 10);
+  --chart-4: oklch(0.60 0.22 35);
+  --chart-5: oklch(0.50 0.18 45);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: oklch(0.08 0.02 30);
+  --sidebar-foreground: oklch(0.95 0.05 30);
+  --sidebar-primary: oklch(0.55 0.25 25);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.12 0.02 30);
+  --sidebar-accent-foreground: oklch(0.95 0.05 30);
+  --sidebar-border: oklch(0.15 0.02 30);
+  --sidebar-ring: oklch(0.55 0.25 25);
+  
+  /* Stranger Things Custom Colors */
+  --st-neon-red: #ff0000;
+  --st-neon-yellow: #ffeb3b;
+  --st-blood: #8b0000;
+  --st-dark: #0a0a0a;
+  --st-fog: rgba(139, 0, 0, 0.1);
 }
 
 .dark {
@@ -123,7 +132,7 @@
   }
 }
 
-/* Custom animations */
+/* Stranger Things Custom Animations & Styles */
 @keyframes float {
   0%,
   100% {
@@ -137,11 +146,27 @@
 @keyframes glow-pulse {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0);
   }
   50% {
-    box-shadow: 0 0 40px rgba(139, 92, 246, 0.5);
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.6);
   }
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6);
+  }
+  20%, 24%, 55% {
+    opacity: 0.7;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.4);
+  }
+}
+
+@keyframes vhs-distort {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
 }
 
 .animate-float {
@@ -150,4 +175,93 @@
 
 .animate-glow-pulse {
   animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.st-title {
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+.st-retro {
+  font-family: 'VT323', monospace;
+  letter-spacing: 0.05em;
+}
+
+.st-flicker {
+  animation: flicker 3s infinite;
+}
+
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanlines::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.vhs-effect {
+  position: relative;
+}
+
+.vhs-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  animation: vhs-distort 0.2s infinite;
+}
+
+.neon-glow-red {
+  box-shadow: 
+    0 0 10px rgba(255, 0, 0, 0.5),
+    0 0 20px rgba(255, 0, 0, 0.3),
+    0 0 30px rgba(255, 0, 0, 0.2),
+    inset 0 0 10px rgba(255, 0, 0, 0.1);
+}
+
+.neon-glow-yellow {
+  box-shadow: 
+    0 0 10px rgba(255, 235, 59, 0.5),
+    0 0 20px rgba(255, 235, 59, 0.3),
+    0 0 30px rgba(255, 235, 59, 0.2);
+}
+
+.text-neon-red {
+  color: #ff0000;
+  text-shadow: 
+    0 0 5px rgba(255, 0, 0, 0.8),
+    0 0 10px rgba(255, 0, 0, 0.6),
+    0 0 15px rgba(255, 0, 0, 0.4);
+}
+
+.text-neon-yellow {
+  color: #ffeb3b;
+  text-shadow: 
+    0 0 5px rgba(255, 235, 59, 0.8),
+    0 0 10px rgba(255, 235, 59, 0.6),
+    0 0 15px rgba(255, 235, 59, 0.4);
 }

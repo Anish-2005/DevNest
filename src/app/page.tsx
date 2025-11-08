@@ -122,23 +122,23 @@ export default function Home() {
   ]
 
   return (
-    <div className="relative w-full min-h-screen bg-slate-950 text-white overflow-hidden">
-      {/* Animated background gradient with more intensity */}
+    <div className="relative w-full min-h-screen bg-[#0a0a0a] text-white overflow-hidden scanlines vhs-effect">
+      {/* Dark Stranger Things background gradient */}
       <motion.div
         className="fixed inset-0 -z-10"
         style={{
-          background: "radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 50%), radial-gradient(circle at 40% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%)",
+          background: "radial-gradient(circle at 20% 50%, rgba(139, 0, 0, 0.2) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255, 0, 0, 0.15) 0%, transparent 50%), radial-gradient(circle at 40% 20%, rgba(255, 235, 59, 0.08) 0%, transparent 50%)",
         }}
         animate={{
-          opacity: [0.5, 0.8, 0.5],
+          opacity: [0.4, 0.7, 0.4],
         }}
         transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
       />
 
-      {/* Animated floating grid with glow */}
-      <div className="fixed inset-0 -z-10 opacity-20">
+      {/* Eerie floating grid */}
+      <div className="fixed inset-0 -z-10 opacity-10">
         <motion.div 
-          className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,.4)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,.4)_1px,transparent_1px)] bg-[size:4rem_4rem]"
+          className="absolute inset-0 bg-[linear-gradient(rgba(255,0,0,.3)_1px,transparent_1px),linear-gradient(90deg,rgba(255,0,0,.3)_1px,transparent_1px)] bg-[size:4rem_4rem]"
           animate={{ 
             backgroundPosition: ["0px 0px", "64px 64px"],
           }}
@@ -146,25 +146,25 @@ export default function Home() {
         />
       </div>
 
-      {/* Multiple dynamic mouse-following glows with different colors */}
+      {/* Red glowing orbs following mouse (Upside Down energy) */}
       <motion.div
         className="fixed -z-10 w-[600px] h-[600px] rounded-full blur-3xl pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(139, 92, 246, 0.2) 40%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(255, 0, 0, 0.3) 0%, rgba(139, 0, 0, 0.15) 40%, transparent 70%)",
           x: mousePos.x - 300,
           y: mousePos.y - 300,
         }}
-        animate={{ opacity: [0.4, 0.7, 0.4] }}
+        animate={{ opacity: [0.3, 0.6, 0.3] }}
         transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
       />
       <motion.div
         className="fixed -z-10 w-[500px] h-[500px] rounded-full blur-3xl pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(255, 235, 59, 0.2) 0%, transparent 70%)",
           x: mousePos.x - 250 + Math.sin(scrollY * 0.001) * 100,
           y: mousePos.y - 250 + Math.cos(scrollY * 0.001) * 100,
         }}
-        animate={{ opacity: [0.3, 0.6, 0.3] }}
+        animate={{ opacity: [0.2, 0.4, 0.2] }}
         transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, delay: 0.5 }}
       />
       
@@ -201,7 +201,7 @@ export default function Home() {
 
       {/* ========== HEADER ========== */}
       <motion.header
-        className="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/70 border-b border-purple-500/20 py-4 shadow-lg shadow-purple-500/5"
+        className="sticky top-0 z-50 backdrop-blur-md bg-[#0a0a0a]/80 border-b border-red-900/20 py-4"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -209,18 +209,22 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
           <motion.div className="flex items-center gap-2 group cursor-pointer" whileHover={{ scale: 1.05 }}>
             <motion.div
-              className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+              className="w-10 h-10 rounded-lg bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center neon-glow-red"
+              animate={{ 
+                boxShadow: [
+                  "0 0 10px rgba(255, 0, 0, 0.5)",
+                  "0 0 20px rgba(255, 0, 0, 0.8)",
+                  "0 0 10px rgba(255, 0, 0, 0.5)"
+                ]
+              }}
+              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
             >
-              <Sparkles className="w-6 h-6" />
+              <Sparkles className="w-6 h-6 text-red-200" />
             </motion.div>
-                          <span className="font-bold text-2xl bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-lg">
+            <span className="st-title text-2xl text-neon-red st-flicker">
               DevNest
             </span>
-          </motion.div>
-
-          <nav className="hidden md:flex items-center gap-8">
+          </motion.div>          <nav className="hidden md:flex items-center gap-8">
             {["Roadmaps", "Features", "Community", "Pricing"].map((item, i) => (
               <motion.a
                 key={item}
