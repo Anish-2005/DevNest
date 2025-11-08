@@ -229,12 +229,12 @@ export default function Home() {
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="relative text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                className="relative st-retro text-sm font-medium text-red-200 hover:text-neon-red transition-colors"
                 whileHover={{ y: -2 }}
               >
                 {item}
                 <motion.div
-                  className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-500"
+                  className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-red-700 to-red-500"
                   initial={{ width: 0 }}
                   whileHover={{ width: "100%" }}
                   transition={{ duration: 0.3 }}
@@ -244,7 +244,7 @@ export default function Home() {
           </nav>
 
           <motion.button
-            className="px-6 py-2 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 font-semibold text-white shadow-lg hover:shadow-purple-500/50 transition-shadow"
+            className="px-6 py-2 rounded-full bg-gradient-to-r from-red-700 to-red-900 font-semibold text-white shadow-lg neon-glow-red hover:shadow-red-500/70 transition-shadow st-retro"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -267,52 +267,52 @@ export default function Home() {
           animate="visible"
         >
           <motion.div variants={itemVariants} className="mb-8">
-            <span className="inline-block px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-sm font-medium">
-              ✨ Next Generation Learning Platform
+            <span className="inline-block px-4 py-2 rounded-full bg-red-900/20 border border-red-700/40 text-red-200 text-sm font-medium st-retro neon-glow-red">
+              ⚡ Enter the Upside Down of Learning
             </span>
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
-            className="text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight text-balance"
+            className="st-title text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight text-balance st-flicker"
             style={{
-              textShadow: "0 0 40px rgba(139, 92, 246, 0.3), 0 0 80px rgba(6, 182, 212, 0.2)",
+              textShadow: "0 0 40px rgba(255, 0, 0, 0.5), 0 0 80px rgba(255, 0, 0, 0.3), 0 0 120px rgba(255, 235, 59, 0.2)",
             }}
           >
             Master Web{" "}
             <span className="relative inline-block">
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
+              <span className="bg-gradient-to-r from-red-500 via-red-600 to-yellow-500 bg-clip-text text-transparent">
                 Development
               </span>
               <motion.span
-                className="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent blur-2xl opacity-50"
+                className="absolute inset-0 bg-gradient-to-r from-red-500 via-red-600 to-yellow-500 bg-clip-text text-transparent blur-2xl opacity-50"
                 animate={{ opacity: [0.3, 0.6, 0.3] }}
                 transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
               >
                 Development
               </motion.span>
             </span>{" "}
-            Like Never Before
+            <span className="text-neon-yellow">Like Never Before</span>
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="st-retro text-xl md:text-2xl text-red-200/70 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            Interactive learning paths, real-time progress tracking, and AI-powered guidance. Transform your development
-            journey today.
+            Dive into the dark dimension of code. Interactive paths through the shadows, real-time tracking, 
+            and AI guidance from beyond. Your journey into the unknown starts here.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-6 justify-center">
             <motion.button
-              className="px-8 py-4 rounded-lg bg-gradient-to-r from-purple-500 to-cyan-500 font-bold text-lg shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/70 transition-all flex items-center gap-2 group"
+              className="px-8 py-4 rounded-lg bg-gradient-to-r from-red-700 to-red-900 font-bold text-lg shadow-2xl shadow-red-700/50 hover:shadow-red-700/70 transition-all flex items-center gap-2 group st-retro neon-glow-red"
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
             >
-              Start Learning <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Enter the Portal <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.button>
             <motion.button
-              className="px-8 py-4 rounded-lg border-2 border-purple-500/50 font-bold text-lg hover:bg-purple-500/10 transition-all flex items-center gap-2"
+              className="px-8 py-4 rounded-lg border-2 border-red-700/50 font-bold text-lg hover:bg-red-900/20 transition-all flex items-center gap-2 st-retro text-red-200"
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
             >

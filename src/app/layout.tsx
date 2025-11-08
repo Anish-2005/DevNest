@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DevNest - Master Web Development Like Never Before",
-  description: "Interactive learning paths, real-time progress tracking, and AI-powered guidance. Transform your development journey with DevNest.",
+  title: "DevNest - Enter the Upside Down of Learning",
+  description: "Master web development through the darkness. Interactive learning paths with an eerie 80s Stranger Things aesthetic.",
 };
 
 export default function RootLayout({
