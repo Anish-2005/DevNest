@@ -14,6 +14,8 @@ import {
   Cpu,
   Lightbulb,
   Layers,
+  Flame,
+  Skull,
 } from "lucide-react"
 import dynamic from "next/dynamic"
 
@@ -86,7 +88,7 @@ export default function Home() {
     {
       title: "Frontend Mastery",
       icon: Code2,
-      color: "from-blue-500 to-cyan-500",
+      color: "from-red-700 to-red-900",
       steps: [
         { name: "HTML & CSS Fundamentals", progress: 100 },
         { name: "JavaScript ES6+", progress: 100 },
@@ -98,7 +100,7 @@ export default function Home() {
     {
       title: "Full-Stack Excellence",
       icon: Layers,
-      color: "from-purple-500 to-pink-500",
+      color: "from-red-800 to-red-950",
       steps: [
         { name: "Node.js & Express", progress: 90 },
         { name: "Database Design", progress: 75 },
@@ -110,7 +112,7 @@ export default function Home() {
     {
       title: "Web Performance",
       icon: Zap,
-      color: "from-yellow-500 to-orange-500",
+      color: "from-red-600 to-yellow-700",
       steps: [
         { name: "Bundle Optimization", progress: 88 },
         { name: "Code Splitting", progress: 82 },
@@ -267,8 +269,9 @@ export default function Home() {
           animate="visible"
         >
           <motion.div variants={itemVariants} className="mb-8">
-            <span className="inline-block px-4 py-2 rounded-full bg-red-900/20 border border-red-700/40 text-red-200 text-sm font-medium st-retro neon-glow-red">
-              ⚡ Enter the Upside Down of Learning
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-900/20 border border-red-700/40 text-red-200 text-sm font-medium st-retro neon-glow-red">
+              <Zap className="w-4 h-4" />
+              Enter the Upside Down of Learning
             </span>
           </motion.div>
 
@@ -573,7 +576,7 @@ export default function Home() {
 
               {/* Data Visualization */}
               <motion.div
-                className="rounded-2xl border border-purple-500/20 bg-slate-900/50 p-8 overflow-hidden"
+                className="rounded-2xl border border-red-900/30 bg-black/70 p-8 overflow-hidden neon-glow-red backdrop-blur-xl"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
@@ -655,11 +658,12 @@ export default function Home() {
 
             <motion.div className="relative z-10">
               <motion.div
-                className="inline-block px-6 py-2 rounded-full bg-red-900/30 border border-red-700/50 text-red-300 text-sm font-semibold mb-6 st-retro neon-glow-red"
+                className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-red-900/30 border border-red-700/50 text-red-300 text-sm font-semibold mb-6 st-retro neon-glow-red"
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
               >
-                ⚡ The Portal Is Closing
+                <Flame className="w-4 h-4" />
+                The Portal Is Closing
               </motion.div>
               
               <h3 className="st-title text-4xl md:text-5xl lg:text-6xl font-black mb-6 st-flicker" style={{
@@ -685,7 +689,7 @@ export default function Home() {
                 />
                 <span className="relative z-10 flex items-center gap-2">
                   Cross The Threshold Now
-                  <Sparkles className="w-5 h-5" />
+                  <Skull className="w-5 h-5" />
                 </span>
               </motion.button>
               
