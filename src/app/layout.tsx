@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import dynamic from "next/dynamic";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,6 +12,9 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+// Dynamically load ThreeScene as a client component to avoid SSR issues
+const ThreeScene = dynamic(() => import("./three-scene"), { ssr: false });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,6 +31,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Fullscreen interactive background placed behind all content */}
+        <div className="fixed inset-0 -z-20 pointer-events-none">
+          <ThreeScene />
+        </div>
+
         {children}
       </body>
     </html>
