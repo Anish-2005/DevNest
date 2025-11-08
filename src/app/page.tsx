@@ -328,9 +328,9 @@ export default function Home() {
             animate="visible"
           >
             {[
-              { value: "50K+", label: "Active Learners" },
-              { value: "200+", label: "Learning Paths" },
-              { value: "99%", label: "Success Rate" },
+              { value: "50K+", label: "Trapped Souls" },
+              { value: "200+", label: "Dark Paths" },
+              { value: "99%", label: "Escape Rate" },
             ].map((stat, i) => (
               <motion.div
                 key={i}
@@ -339,10 +339,10 @@ export default function Home() {
                 animate="animate"
                 className="text-center"
               >
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                <div className="st-title text-3xl md:text-4xl font-bold bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent st-flicker">
                   {stat.value}
                 </div>
-                <div className="text-slate-500 text-sm md:text-base mt-2">{stat.label}</div>
+                <div className="text-red-300/60 text-sm md:text-base mt-2 st-retro">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -355,10 +355,10 @@ export default function Home() {
           transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
         >
           <div className="flex flex-col items-center gap-2">
-            <span className="text-sm text-slate-500">Scroll to explore</span>
-            <div className="w-6 h-10 border-2 border-purple-500/50 rounded-full flex justify-center">
+            <span className="text-sm text-red-300/60 st-retro">Descend Deeper</span>
+            <div className="w-6 h-10 border-2 border-red-700/50 rounded-full flex justify-center neon-glow-red">
               <motion.div
-                className="w-1 h-2 bg-purple-500 rounded-full mt-2"
+                className="w-1 h-2 bg-red-500 rounded-full mt-2"
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
               />
@@ -377,14 +377,14 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-6xl font-black mb-6">
-              Powerful{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                Features
+            <h2 className="st-title text-5xl md:text-6xl font-black mb-6 st-flicker">
+              Supernatural{" "}
+              <span className="bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent">
+                Powers
               </span>
             </h2>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              Everything you need to accelerate your web development career
+            <p className="st-retro text-xl text-red-200/70 max-w-2xl mx-auto">
+              Harness dark forces to accelerate your journey through the code dimension
             </p>
           </motion.div>
 
@@ -392,81 +392,81 @@ export default function Home() {
             {[
               {
                 icon: Target,
-                title: "Personalized Paths",
-                description: "AI-curated learning paths tailored to your goals and pace",
-                gradient: "from-purple-500 to-pink-500",
+                title: "Cursed Paths",
+                description: "AI-conjured learning paths from the shadows, tailored to your fate",
+                gradient: "from-red-700 to-red-900",
               },
               {
                 icon: Cpu,
-                title: "Real-time Feedback",
-                description: "Instant code analysis and performance insights with AI guidance",
-                gradient: "from-cyan-500 to-blue-500",
+                title: "Psychic Feedback",
+                description: "Instant code readings and supernatural insights from beyond",
+                gradient: "from-red-800 to-yellow-700",
               },
               {
                 icon: Lock,
-                title: "Secure Environment",
-                description: "Practice in isolated sandboxes with production-like conditions",
-                gradient: "from-emerald-500 to-teal-500",
+                title: "Isolated Realm",
+                description: "Practice in dimensional pockets sealed from the real world",
+                gradient: "from-red-900 to-red-950",
               },
               {
                 icon: Users,
-                title: "Community Hub",
-                description: "Connect with 50K+ developers and collaborate on projects",
-                gradient: "from-orange-500 to-red-500",
+                title: "Lost Souls Network",
+                description: "Connect with 50K+ trapped developers in the Upside Down",
+                gradient: "from-yellow-600 to-red-700",
               },
               {
                 icon: TrendingUp,
-                title: "Progress Analytics",
-                description: "Advanced tracking and insights into your learning journey",
-                gradient: "from-violet-500 to-purple-500",
+                title: "Flickering Analytics",
+                description: "Track your descent through the darkness with eerie metrics",
+                gradient: "from-red-600 to-red-800",
               },
               {
                 icon: Lightbulb,
-                title: "Smart Suggestions",
-                description: "AI-powered recommendations based on your skill gaps",
-                gradient: "from-yellow-500 to-orange-500",
+                title: "Haunted Hints",
+                description: "Whispers from the void revealing your weaknesses",
+                gradient: "from-yellow-500 to-red-600",
               },
             ].map((feature, i) => (
               <motion.div
                 key={i}
-                className="group p-8 rounded-3xl border-2 border-purple-500/20 bg-slate-900/40 backdrop-blur-xl hover:border-purple-500/60 transition-all cursor-pointer relative overflow-hidden"
+                className="group p-8 rounded-3xl border-2 border-red-900/30 bg-black/60 backdrop-blur-xl hover:border-red-700/60 transition-all cursor-pointer relative overflow-hidden neon-glow-red"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -15, scale: 1.02, boxShadow: "0 25px 50px rgba(139, 92, 246, 0.4)" }}
+                whileHover={{ y: -15, scale: 1.02, boxShadow: "0 25px 50px rgba(255, 0, 0, 0.4)" }}
               >
-                {/* Animated gradient border glow */}
+                {/* Animated red glow */}
                 <motion.div
                   className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{
-                    background: `linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1))`,
+                    background: `linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(255, 0, 0, 0.1))`,
                   }}
                 />
                 
-                {/* Corner accent */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                {/* Corner red accent */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-red-700/20 to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
 
                 <motion.div className="relative z-10">
                   <motion.div
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 group-hover:shadow-purple-500/60`}
+                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 shadow-lg shadow-red-700/30 group-hover:shadow-red-700/60 neon-glow-red`}
                     whileHover={{ scale: 1.15, rotate: 360 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <feature.icon className="w-8 h-8 text-white" />
+                    <feature.icon className="w-8 h-8 text-red-100" />
                   </motion.div>
-                  <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
+                  <h3 className="st-title text-2xl font-bold mb-3 text-neon-red">
                     {feature.title}
                   </h3>
-                  <p className="text-slate-400 leading-relaxed">{feature.description}</p>
+                  <p className="text-red-200/60 leading-relaxed st-retro">{feature.description}</p>
                   
                   {/* Hover arrow indicator */}
                   <motion.div
-                    className="mt-4 flex items-center gap-2 text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="mt-4 flex items-center gap-2 text-red-400 opacity-0 group-hover:opacity-100 transition-opacity st-retro"
                     initial={{ x: -10 }}
                     whileHover={{ x: 0 }}
                   >
-                    <span className="text-sm font-semibold">Learn more</span>
+                    <span className="text-sm font-semibold">Investigate</span>
                     <ArrowRight className="w-4 h-4" />
                   </motion.div>
                 </motion.div>
@@ -486,10 +486,10 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-6xl font-black mb-6">
-              Structured{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                Learning Paths
+            <h2 className="st-title text-5xl md:text-6xl font-black mb-6 st-flicker">
+              Twisted{" "}
+              <span className="bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent">
+                Escape Routes
               </span>
             </h2>
           </motion.div>
@@ -499,10 +499,10 @@ export default function Home() {
             {roadmaps.map((roadmap, i) => (
               <motion.button
                 key={i}
-                className={`px-6 py-3 rounded-full font-bold transition-all flex items-center gap-2 ${
+                className={`px-6 py-3 rounded-full font-bold transition-all flex items-center gap-2 st-retro ${
                   activeRoadmap === i
-                    ? `bg-gradient-to-r ${roadmap.color} text-white shadow-lg`
-                    : "bg-slate-800/50 border border-slate-700 text-slate-300 hover:border-slate-600"
+                    ? `bg-gradient-to-r from-red-700 to-red-900 text-white shadow-lg neon-glow-red`
+                    : "bg-black/60 border border-red-900/40 text-red-200/70 hover:border-red-700/60"
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -529,32 +529,32 @@ export default function Home() {
                 {roadmaps[activeRoadmap].steps.map((step, i) => (
                   <motion.div
                     key={i}
-                    className="group p-8 rounded-2xl border-2 border-purple-500/20 bg-slate-900/40 backdrop-blur-xl hover:border-purple-500/60 transition-all cursor-pointer relative overflow-hidden"
+                    className="group p-8 rounded-2xl border-2 border-red-900/30 bg-black/60 backdrop-blur-xl hover:border-red-700/60 transition-all cursor-pointer relative overflow-hidden neon-glow-red"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
-                    whileHover={{ x: 15, scale: 1.02, boxShadow: "0 15px 40px rgba(139, 92, 246, 0.3)" }}
+                    whileHover={{ x: 15, scale: 1.02, boxShadow: "0 15px 40px rgba(255, 0, 0, 0.3)" }}
                   >
-                    {/* Glow effect on hover */}
+                    {/* Red glow effect on hover */}
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/5 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity"
+                      className="absolute inset-0 bg-gradient-to-r from-red-900/0 via-red-700/10 to-yellow-900/0 opacity-0 group-hover:opacity-100 transition-opacity"
                     />
                     
                     <div className="relative z-10">
                       <div className="flex items-center justify-between mb-4">
-                        <span className="font-bold text-xl bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
+                        <span className="st-title font-bold text-xl text-neon-red">
                           {step.name}
                         </span>
                         <motion.span 
-                          className="text-lg text-purple-400 font-bold px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30"
+                          className="st-retro text-lg text-red-400 font-bold px-3 py-1 rounded-full bg-red-900/20 border border-red-700/40"
                           whileHover={{ scale: 1.1 }}
                         >
                           {step.progress}%
                         </motion.span>
                       </div>
-                      <div className="w-full h-3 bg-slate-800/50 rounded-full overflow-hidden border border-slate-700/50 shadow-inner">
+                      <div className="w-full h-3 bg-black/70 rounded-full overflow-hidden border border-red-900/50 shadow-inner">
                         <motion.div
-                          className="h-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 rounded-full relative"
+                          className="h-full bg-gradient-to-r from-red-700 via-red-600 to-yellow-600 rounded-full relative"
                           initial={{ width: 0 }}
                           animate={{ width: `${step.progress}%` }}
                           transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
@@ -604,14 +604,14 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <motion.div className="mb-4 flex justify-center" whileHover={{ scale: 1.2, rotate: 10 }}>
-                  <div className="p-4 rounded-full bg-gradient-to-br from-purple-500/20 to-cyan-500/20">
-                    <stat.icon className="w-8 h-8 text-purple-400" />
+                  <div className="p-4 rounded-full bg-gradient-to-br from-red-900/30 to-yellow-900/20 neon-glow-red">
+                    <stat.icon className="w-8 h-8 text-red-400" />
                   </div>
                 </motion.div>
-                <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+                <div className="st-title text-4xl md:text-5xl font-black bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent mb-2 st-flicker">
                   {stat.number}
                 </div>
-                <p className="text-slate-400 text-lg">{stat.label}</p>
+                <p className="text-red-300/60 text-lg st-retro">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -622,22 +622,22 @@ export default function Home() {
       <section className="relative py-24 px-4">
         <div className="max-w-4xl mx-auto">
           <motion.div
-            className="relative rounded-3xl border-2 border-purple-500/40 bg-gradient-to-br from-slate-900/90 via-purple-900/30 to-cyan-900/30 p-12 md:p-20 text-center overflow-hidden backdrop-blur-xl shadow-2xl shadow-purple-500/20"
+            className="relative rounded-3xl border-2 border-red-900/40 bg-gradient-to-br from-black/90 via-red-950/30 to-yellow-950/20 p-12 md:p-20 text-center overflow-hidden backdrop-blur-xl shadow-2xl shadow-red-900/30 neon-glow-red"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {/* Multiple animated glow effects */}
+            {/* Multiple animated red glow effects */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/20 to-cyan-500/0"
+              className="absolute inset-0 bg-gradient-to-r from-red-900/0 via-red-700/20 to-yellow-900/0"
               animate={{
                 backgroundPosition: ["0% 0%", "100% 100%"],
               }}
               transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
             />
             <motion.div
-              className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
+              className="absolute top-0 left-1/4 w-96 h-96 bg-red-700/20 rounded-full blur-3xl"
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.3, 0.5, 0.3],
@@ -645,7 +645,7 @@ export default function Home() {
               transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
             />
             <motion.div
-              className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"
+              className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-700/20 rounded-full blur-3xl"
               animate={{
                 scale: [1.2, 1, 1.2],
                 opacity: [0.5, 0.3, 0.5],
@@ -655,26 +655,26 @@ export default function Home() {
 
             <motion.div className="relative z-10">
               <motion.div
-                className="inline-block px-6 py-2 rounded-full bg-purple-500/20 border border-purple-500/40 text-purple-300 text-sm font-semibold mb-6"
+                className="inline-block px-6 py-2 rounded-full bg-red-900/30 border border-red-700/50 text-red-300 text-sm font-semibold mb-6 st-retro neon-glow-red"
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
               >
-                🚀 Limited Time Offer
+                ⚡ The Portal Is Closing
               </motion.div>
               
-              <h3 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6" style={{
-                textShadow: "0 0 40px rgba(139, 92, 246, 0.4)",
+              <h3 className="st-title text-4xl md:text-5xl lg:text-6xl font-black mb-6 st-flicker" style={{
+                textShadow: "0 0 40px rgba(255, 0, 0, 0.5), 0 0 80px rgba(255, 0, 0, 0.3)",
               }}>
-                Ready to Transform Your{" "}
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                  Development Career?
+                Will You Escape The{" "}
+                <span className="bg-gradient-to-r from-red-500 via-red-600 to-yellow-500 bg-clip-text text-transparent">
+                  Upside Down?
                 </span>
               </h3>
-              <p className="text-xl md:text-2xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Join thousands of developers who have mastered web development with our cutting-edge platform.
+              <p className="st-retro text-xl md:text-2xl text-red-200/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Join 50K+ trapped souls who found their way through the darkness. Your escape route awaits...
               </p>
               <motion.button
-                className="px-12 py-5 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 font-bold text-xl shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/80 transition-all relative overflow-hidden group"
+                className="px-12 py-5 rounded-full bg-gradient-to-r from-red-700 via-red-800 to-red-900 font-bold text-xl shadow-2xl shadow-red-700/60 hover:shadow-red-700/90 transition-all relative overflow-hidden group neon-glow-red st-retro"
                 whileHover={{ scale: 1.08, y: -8 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -684,13 +684,13 @@ export default function Home() {
                   transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                 />
                 <span className="relative z-10 flex items-center gap-2">
-                  Start Free Trial Today
+                  Cross The Threshold Now
                   <Sparkles className="w-5 h-5" />
                 </span>
               </motion.button>
               
-              <p className="text-sm text-slate-500 mt-6">
-                No credit card required • 14-day free trial • Cancel anytime
+              <p className="text-sm text-red-400/60 mt-6 st-retro">
+                No soul required • Escape in 14 days • Return anytime (if you can)
               </p>
             </motion.div>
           </motion.div>
@@ -699,7 +699,7 @@ export default function Home() {
 
       {/* ========== FOOTER ========== */}
       <motion.footer
-        className="relative border-t border-purple-500/10 bg-slate-950/80 backdrop-blur-sm py-12 px-4"
+        className="relative border-t border-red-900/20 bg-black/90 backdrop-blur-sm py-12 px-4"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
@@ -708,17 +708,17 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             {[
-              { title: "Product", links: ["Features", "Pricing", "Security", "Roadmap"] },
-              { title: "Company", links: ["About", "Blog", "Careers", "Contact"] },
-              { title: "Community", links: ["Discord", "Twitter", "GitHub", "Newsletter"] },
-              { title: "Legal", links: ["Privacy", "Terms", "Cookies", "Compliance"] },
+              { title: "Dimensions", links: ["Powers", "Pricing", "Containment", "Dark Map"] },
+              { title: "The Lab", links: ["Experiments", "Archives", "Recruitment", "Signals"] },
+              { title: "Lost Souls", links: ["Discord", "Twitter", "GitHub", "Transmissions"] },
+              { title: "Protocols", links: ["Privacy", "Terms", "Cookies", "Compliance"] },
             ].map((col, i) => (
               <div key={i}>
-                <h4 className="font-bold mb-4 text-purple-400">{col.title}</h4>
+                <h4 className="st-title font-bold mb-4 text-red-400 st-flicker">{col.title}</h4>
                 <ul className="space-y-2">
                   {col.links.map((link, j) => (
                     <li key={j}>
-                      <a href="#" className="text-slate-500 hover:text-slate-300 transition-colors">
+                      <a href="#" className="st-retro text-red-300/50 hover:text-red-300 transition-colors">
                         {link}
                       </a>
                     </li>
@@ -727,11 +727,11 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div className="border-t border-slate-800 pt-8 flex items-center justify-between text-slate-500 text-sm">
-            <p>&copy; 2025 DevNest. All rights reserved.</p>
+          <div className="border-t border-red-900/30 pt-8 flex items-center justify-between text-red-400/50 text-sm st-retro">
+            <p>&copy; 2025 DevNest. All souls trapped.</p>
             <div className="flex gap-4">
               {["Twitter", "GitHub", "LinkedIn"].map((social) => (
-                <a key={social} href="#" className="hover:text-purple-400 transition-colors">
+                <a key={social} href="#" className="hover:text-red-400 transition-colors">
                   {social}
                 </a>
               ))}
