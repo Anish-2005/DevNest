@@ -22,7 +22,7 @@ const ThreeScene = dynamic(() => import("./three-scene"), { ssr: false })
 const DataVisualizer = dynamic(() => import("./data-viz"), { ssr: false })
 
 // Enhanced animation variants
-const containerVariants = {
+const containerVariants: any = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -30,7 +30,7 @@ const containerVariants = {
   },
 }
 
-const itemVariants = {
+const itemVariants: any = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -39,7 +39,7 @@ const itemVariants = {
   },
 }
 
-const floatingVariants = {
+const floatingVariants: any = {
   initial: { y: 0 },
   animate: {
     y: [-20, 20],
@@ -52,7 +52,7 @@ const floatingVariants = {
   },
 }
 
-const glowVariants = {
+const glowVariants: any = {
   initial: { boxShadow: "0 0 0px rgba(139, 92, 246, 0)" },
   animate: {
     boxShadow: ["0 0 20px rgba(139, 92, 246, 0)", "0 0 40px rgba(139, 92, 246, 0.5)", "0 0 20px rgba(139, 92, 246, 0)"],
@@ -165,8 +165,8 @@ export default function Home() {
             >
               <Sparkles className="w-6 h-6" />
             </motion.div>
-            <span className="font-bold text-xl bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              DevPath
+              <span className="font-bold text-xl bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              DevNest
             </span>
           </motion.div>
 
@@ -582,7 +582,7 @@ export default function Home() {
             ))}
           </div>
           <div className="border-t border-slate-800 pt-8 flex items-center justify-between text-slate-500 text-sm">
-            <p>&copy; 2025 DevPath. All rights reserved.</p>
+            <p>&copy; 2025 DevNest. All rights reserved.</p>
             <div className="flex gap-4">
               {["Twitter", "GitHub", "LinkedIn"].map((social) => (
                 <a key={social} href="#" className="hover:text-purple-400 transition-colors">
