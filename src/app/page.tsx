@@ -123,35 +123,85 @@ export default function Home() {
 
   return (
     <div className="relative w-full min-h-screen bg-slate-950 text-white overflow-hidden">
-      {/* Animated background gradient */}
+      {/* Animated background gradient with more intensity */}
       <motion.div
-        className="fixed inset-0 -z-10 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"
-        animate={{
-          backgroundPosition: ["0% 0%", "100% 100%"],
+        className="fixed inset-0 -z-10"
+        style={{
+          background: "radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 50%), radial-gradient(circle at 40% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%)",
         }}
-        transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
+        animate={{
+          opacity: [0.5, 0.8, 0.5],
+        }}
+        transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
       />
 
-      {/* Floating grid background */}
-      <div className="fixed inset-0 -z-10 opacity-10">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,.3)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,.3)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+      {/* Animated floating grid with glow */}
+      <div className="fixed inset-0 -z-10 opacity-20">
+        <motion.div 
+          className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,.4)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,.4)_1px,transparent_1px)] bg-[size:4rem_4rem]"
+          animate={{ 
+            backgroundPosition: ["0px 0px", "64px 64px"],
+          }}
+          transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+        />
       </div>
 
-      {/* Dynamic mouse-following glow */}
+      {/* Multiple dynamic mouse-following glows with different colors */}
       <motion.div
-        className="fixed -z-10 w-96 h-96 rounded-full blur-3xl pointer-events-none"
+        className="fixed -z-10 w-[600px] h-[600px] rounded-full blur-3xl pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%)",
-          x: mousePos.x - 192,
-          y: mousePos.y - 192,
+          background: "radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(139, 92, 246, 0.2) 40%, transparent 70%)",
+          x: mousePos.x - 300,
+          y: mousePos.y - 300,
         }}
-        animate={{ opacity: [0.3, 0.5, 0.3] }}
+        animate={{ opacity: [0.4, 0.7, 0.4] }}
         transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
       />
+      <motion.div
+        className="fixed -z-10 w-[500px] h-[500px] rounded-full blur-3xl pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, transparent 70%)",
+          x: mousePos.x - 250 + Math.sin(scrollY * 0.001) * 100,
+          y: mousePos.y - 250 + Math.cos(scrollY * 0.001) * 100,
+        }}
+        animate={{ opacity: [0.3, 0.6, 0.3] }}
+        transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, delay: 0.5 }}
+      />
+      
+      {/* Floating orbs */}
+      {[...Array(8)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="fixed -z-10 rounded-full pointer-events-none"
+          style={{
+            width: `${100 + i * 30}px`,
+            height: `${100 + i * 30}px`,
+            left: `${10 + i * 12}%`,
+            top: `${20 + (i % 3) * 25}%`,
+            background: i % 3 === 0 
+              ? "radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%)"
+              : i % 3 === 1
+              ? "radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%)"
+              : "radial-gradient(circle, rgba(236, 72, 153, 0.08) 0%, transparent 70%)",
+            filter: "blur(40px)",
+          }}
+          animate={{
+            y: [0, -30, 0],
+            x: [0, Math.sin(i) * 20, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 8 + i,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+            delay: i * 0.5,
+          }}
+        />
+      ))}
 
       {/* ========== HEADER ========== */}
       <motion.header
-        className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/50 border-b border-purple-500/10 py-4"
+        className="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/70 border-b border-purple-500/20 py-4 shadow-lg shadow-purple-500/5"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -165,7 +215,7 @@ export default function Home() {
             >
               <Sparkles className="w-6 h-6" />
             </motion.div>
-              <span className="font-bold text-xl bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                          <span className="font-bold text-2xl bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-lg">
               DevNest
             </span>
           </motion.div>
@@ -221,10 +271,22 @@ export default function Home() {
           <motion.h1
             variants={itemVariants}
             className="text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight text-balance"
+            style={{
+              textShadow: "0 0 40px rgba(139, 92, 246, 0.3), 0 0 80px rgba(6, 182, 212, 0.2)",
+            }}
           >
             Master Web{" "}
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
-              Development
+            <span className="relative inline-block">
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
+                Development
+              </span>
+              <motion.span
+                className="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent blur-2xl opacity-50"
+                animate={{ opacity: [0.3, 0.6, 0.3] }}
+                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+              >
+                Development
+              </motion.span>
             </span>{" "}
             Like Never Before
           </motion.h1>
@@ -328,57 +390,81 @@ export default function Home() {
                 icon: Target,
                 title: "Personalized Paths",
                 description: "AI-curated learning paths tailored to your goals and pace",
+                gradient: "from-purple-500 to-pink-500",
               },
               {
                 icon: Cpu,
                 title: "Real-time Feedback",
                 description: "Instant code analysis and performance insights with AI guidance",
+                gradient: "from-cyan-500 to-blue-500",
               },
               {
                 icon: Lock,
                 title: "Secure Environment",
                 description: "Practice in isolated sandboxes with production-like conditions",
+                gradient: "from-emerald-500 to-teal-500",
               },
               {
                 icon: Users,
                 title: "Community Hub",
                 description: "Connect with 50K+ developers and collaborate on projects",
+                gradient: "from-orange-500 to-red-500",
               },
               {
                 icon: TrendingUp,
                 title: "Progress Analytics",
                 description: "Advanced tracking and insights into your learning journey",
+                gradient: "from-violet-500 to-purple-500",
               },
               {
                 icon: Lightbulb,
                 title: "Smart Suggestions",
                 description: "AI-powered recommendations based on your skill gaps",
+                gradient: "from-yellow-500 to-orange-500",
               },
             ].map((feature, i) => (
               <motion.div
                 key={i}
-                className="group p-8 rounded-2xl border border-purple-500/20 bg-slate-900/50 backdrop-blur hover:border-purple-500/50 transition-all cursor-pointer relative overflow-hidden"
+                className="group p-8 rounded-3xl border-2 border-purple-500/20 bg-slate-900/40 backdrop-blur-xl hover:border-purple-500/60 transition-all cursor-pointer relative overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)" }}
+                whileHover={{ y: -15, scale: 1.02, boxShadow: "0 25px 50px rgba(139, 92, 246, 0.4)" }}
               >
-                {/* Gradient overlay on hover */}
+                {/* Animated gradient border glow */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/0 to-cyan-500/0 group-hover:from-purple-500/10 group-hover:via-purple-500/10 group-hover:to-cyan-500/10 transition-all"
-                  initial={false}
+                  className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: `linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1))`,
+                  }}
                 />
+                
+                {/* Corner accent */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
 
                 <motion.div className="relative z-10">
                   <motion.div
-                    className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/20 to-cyan-500/20 flex items-center justify-center mb-6 group-hover:bg-gradient-to-br group-hover:from-purple-500/40 group-hover:to-cyan-500/40 transition-all"
-                    whileHover={{ scale: 1.1, rotate: 10 }}
+                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 group-hover:shadow-purple-500/60`}
+                    whileHover={{ scale: 1.15, rotate: 360 }}
+                    transition={{ duration: 0.6 }}
                   >
-                    <feature.icon className="w-6 h-6 text-purple-400" />
+                    <feature.icon className="w-8 h-8 text-white" />
                   </motion.div>
-                  <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                  <p className="text-slate-400">{feature.description}</p>
+                  <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
+                    {feature.title}
+                  </h3>
+                  <p className="text-slate-400 leading-relaxed">{feature.description}</p>
+                  
+                  {/* Hover arrow indicator */}
+                  <motion.div
+                    className="mt-4 flex items-center gap-2 text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity"
+                    initial={{ x: -10 }}
+                    whileHover={{ x: 0 }}
+                  >
+                    <span className="text-sm font-semibold">Learn more</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.div>
                 </motion.div>
               </motion.div>
             ))}
@@ -435,28 +521,46 @@ export default function Home() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-12"
             >
               {/* Steps */}
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {roadmaps[activeRoadmap].steps.map((step, i) => (
                   <motion.div
                     key={i}
-                    className="group p-6 rounded-xl border border-purple-500/20 bg-slate-900/50 hover:border-purple-500/50 transition-all cursor-pointer relative overflow-hidden"
+                    className="group p-8 rounded-2xl border-2 border-purple-500/20 bg-slate-900/40 backdrop-blur-xl hover:border-purple-500/60 transition-all cursor-pointer relative overflow-hidden"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
-                    whileHover={{ x: 10, boxShadow: "0 10px 30px rgba(139, 92, 246, 0.2)" }}
+                    whileHover={{ x: 15, scale: 1.02, boxShadow: "0 15px 40px rgba(139, 92, 246, 0.3)" }}
                   >
+                    {/* Glow effect on hover */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/5 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity"
+                    />
+                    
                     <div className="relative z-10">
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="font-bold text-lg">{step.name}</span>
-                        <span className="text-sm text-purple-400 font-semibold">{step.progress}%</span>
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="font-bold text-xl bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
+                          {step.name}
+                        </span>
+                        <motion.span 
+                          className="text-lg text-purple-400 font-bold px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30"
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          {step.progress}%
+                        </motion.span>
                       </div>
-                      <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                      <div className="w-full h-3 bg-slate-800/50 rounded-full overflow-hidden border border-slate-700/50 shadow-inner">
                         <motion.div
-                          className="h-full bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"
+                          className="h-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 rounded-full relative"
                           initial={{ width: 0 }}
                           animate={{ width: `${step.progress}%` }}
-                          transition={{ duration: 1, delay: 0.2 }}
-                        />
+                          transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+                        >
+                          <motion.div
+                            className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"
+                            animate={{ x: ["-100%", "100%"] }}
+                            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                          />
+                        </motion.div>
                       </div>
                     </div>
                   </motion.div>
@@ -514,38 +618,76 @@ export default function Home() {
       <section className="relative py-24 px-4">
         <div className="max-w-4xl mx-auto">
           <motion.div
-            className="relative rounded-3xl border-2 border-purple-500/30 bg-gradient-to-br from-slate-900/80 via-purple-900/20 to-cyan-900/20 p-12 md:p-20 text-center overflow-hidden"
+            className="relative rounded-3xl border-2 border-purple-500/40 bg-gradient-to-br from-slate-900/90 via-purple-900/30 to-cyan-900/30 p-12 md:p-20 text-center overflow-hidden backdrop-blur-xl shadow-2xl shadow-purple-500/20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {/* Animated glow effect */}
+            {/* Multiple animated glow effects */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/10 to-cyan-500/0"
+              className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/20 to-cyan-500/0"
               animate={{
                 backgroundPosition: ["0% 0%", "100% 100%"],
               }}
               transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
             />
+            <motion.div
+              className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.3, 0.5, 0.3],
+              }}
+              transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
+            />
+            <motion.div
+              className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"
+              animate={{
+                scale: [1.2, 1, 1.2],
+                opacity: [0.5, 0.3, 0.5],
+              }}
+              transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, delay: 2 }}
+            />
 
             <motion.div className="relative z-10">
-              <h3 className="text-4xl md:text-5xl font-black mb-6">
+              <motion.div
+                className="inline-block px-6 py-2 rounded-full bg-purple-500/20 border border-purple-500/40 text-purple-300 text-sm font-semibold mb-6"
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+              >
+                🚀 Limited Time Offer
+              </motion.div>
+              
+              <h3 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6" style={{
+                textShadow: "0 0 40px rgba(139, 92, 246, 0.4)",
+              }}>
                 Ready to Transform Your{" "}
-                <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
                   Development Career?
                 </span>
               </h3>
-              <p className="text-xl text-slate-400 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl md:text-2xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
                 Join thousands of developers who have mastered web development with our cutting-edge platform.
               </p>
               <motion.button
-                className="px-10 py-4 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 font-bold text-lg shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/70 transition-all"
-                whileHover={{ scale: 1.05, y: -5 }}
+                className="px-12 py-5 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 font-bold text-xl shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/80 transition-all relative overflow-hidden group"
+                whileHover={{ scale: 1.08, y: -8 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Start Free Trial Today
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0"
+                  animate={{ x: ["-100%", "200%"] }}
+                  transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                />
+                <span className="relative z-10 flex items-center gap-2">
+                  Start Free Trial Today
+                  <Sparkles className="w-5 h-5" />
+                </span>
               </motion.button>
+              
+              <p className="text-sm text-slate-500 mt-6">
+                No credit card required • 14-day free trial • Cancel anytime
+              </p>
             </motion.div>
           </motion.div>
         </div>
