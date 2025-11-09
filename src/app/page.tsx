@@ -20,6 +20,7 @@ import {
 import dynamic from "next/dynamic"
 import { Header } from "@/components/shared/Header"
 import { Footer } from "@/components/shared/Footer"
+import { BackgroundClient } from "@/components/background/BackgroundClient"
 
 // Dynamically import 3D components to avoid SSR issues
 const DataVisualizer = dynamic(() => import("@/components/visualizations/DataVisualizer"), { ssr: false })
@@ -126,6 +127,9 @@ export default function Home() {
 
   return (
     <div className="relative w-full min-h-screen bg-[#0a0a0a] text-white overflow-hidden scanlines vhs-effect">
+      {/* Three.js Background */}
+      <BackgroundClient />
+
       {/* Dark Stranger Things background gradient */}
       <motion.div
         className="fixed inset-0 -z-10"

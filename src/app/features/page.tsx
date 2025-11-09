@@ -7,6 +7,7 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { Header } from "@/components/shared/Header"
+import { BackgroundClient } from "@/components/background/BackgroundClient"
 
 const itemVariants: any = {
   hidden: { opacity: 0, y: 20 },
@@ -91,6 +92,9 @@ export default function FeaturesPage() {
 
   return (
     <div className="relative w-full min-h-screen bg-[#0a0a0a] text-white overflow-hidden scanlines vhs-effect">
+      {/* Three.js Background */}
+      <BackgroundClient />
+
       {/* Background Effects */}
       <motion.div
         className="fixed inset-0 -z-10"
