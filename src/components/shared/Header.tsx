@@ -18,7 +18,7 @@ export function Header() {
           <span className="st-title text-2xl text-neon-red st-flicker">DevNest</span>
         </Link>
         <nav className="hidden md:flex items-center gap-8">
-          {["Features", "Roadmaps", "Pricing", "Community", "About"].map((item) => (
+          {["Portal", "Features", "Roadmaps", "Pricing", "Community", "About"].map((item) => (
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}

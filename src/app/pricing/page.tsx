@@ -99,19 +99,25 @@ export default function PricingPage() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-20">
-        {/* Hero Section */}
-        <motion.div
-          className="text-center mb-20"
-          initial="hidden"
-          animate="visible"
-          variants={itemVariants}
-        >
-          <motion.div variants={itemVariants} className="mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-900/20 border border-red-700/40 text-red-200 text-sm font-medium st-retro neon-glow-red">
-              <Zap className="w-4 h-4" />
-              Choose Your Soul Contract
-            </span>
-          </motion.div>
+        {/* Hero Section with Three.js */}
+        <div className="relative">
+          {/* Three.js Scene overlay for hero */}
+          <div className="absolute inset-0 -top-20 h-[500px] opacity-40 pointer-events-none">
+            <BackgroundClient />
+          </div>
+
+          <motion.div
+            className="relative z-10 text-center mb-20"
+            initial="hidden"
+            animate="visible"
+            variants={itemVariants}
+          >
+            <motion.div variants={itemVariants} className="mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-900/20 border border-red-700/40 text-red-200 text-sm font-medium st-retro neon-glow-red">
+                <Zap className="w-4 h-4" />
+                Choose Your Soul Contract
+              </span>
+            </motion.div>
           
           <h1 className="st-title text-6xl md:text-7xl font-black mb-6 st-flicker">
             Pricing From The{" "}
@@ -123,7 +129,8 @@ export default function PricingPage() {
           <p className="st-retro text-xl text-red-200/70 max-w-3xl mx-auto">
             Select your escape plan. No hidden curses, cancel your contract anytime
           </p>
-        </motion.div>
+          </motion.div>
+        </div>
 
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-3 gap-8 mb-20">

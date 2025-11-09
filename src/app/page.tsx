@@ -18,6 +18,7 @@ import {
   Skull,
 } from "lucide-react"
 import dynamic from "next/dynamic"
+import Link from "next/link"
 import { Header } from "@/components/shared/Header"
 import { Footer } from "@/components/shared/Footer"
 import { BackgroundClient } from "@/components/background/BackgroundClient"
@@ -261,13 +262,15 @@ export default function Home() {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-6 justify-center">
-            <motion.button
-              className="px-8 py-4 rounded-lg bg-gradient-to-r from-red-700 to-red-900 font-bold text-lg shadow-2xl shadow-red-700/50 hover:shadow-red-700/70 transition-all flex items-center gap-2 group st-retro neon-glow-red"
-              whileHover={{ scale: 1.05, y: -5 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Enter the Portal <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            <Link href="/portal">
+              <motion.button
+                className="px-8 py-4 rounded-lg bg-gradient-to-r from-red-700 to-red-900 font-bold text-lg shadow-2xl shadow-red-700/50 hover:shadow-red-700/70 transition-all flex items-center gap-2 group st-retro neon-glow-red"
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Enter the Portal <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+            </Link>
             <motion.button
               className="px-8 py-4 rounded-lg border-2 border-red-700/50 font-bold text-lg hover:bg-red-900/20 transition-all flex items-center gap-2 st-retro text-red-200"
               whileHover={{ scale: 1.05, y: -5 }}
