@@ -211,6 +211,10 @@ export default function Home() {
 
       {/* ========== HERO SECTION ========== */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 px-4 overflow-hidden">
+        {/* Hero Three.js Scene - more visible */}
+        <div className="absolute inset-0 opacity-50">
+          <BackgroundClient />
+        </div>
 
         <motion.div
           className="relative z-10 max-w-6xl mx-auto text-center"
