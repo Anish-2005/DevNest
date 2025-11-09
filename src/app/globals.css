@@ -215,25 +215,7 @@
   z-index: 1000;
 }
 
-.vhs-effect {
-  position: relative;
-}
 
-.vhs-effect::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    rgba(18, 16, 16, 0) 50%,
-    rgba(0, 0, 0, 0.25) 50%
-  );
-  background-size: 100% 4px;
-  pointer-events: none;
-  animation: vhs-distort 0.2s infinite;
-}
 
 .neon-glow-red {
   box-shadow: 
