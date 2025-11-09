@@ -9,7 +9,7 @@ interface Trail {
   y: number
 }
 
-export default function CursorTrail() {
+export function CursorTrail() {
   const [trails, setTrails] = useState<Trail[]>([])
   const [enabled, setEnabled] = useState(true)
 
@@ -67,3 +67,5 @@ export default function CursorTrail() {
     </div>
   )
 }
+
+export default CursorTrail

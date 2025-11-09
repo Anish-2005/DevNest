@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react"
 import * as THREE from "three"
 
-export default function ThreeScene() {
+export function ThreeScene() {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -270,3 +270,5 @@ export default function ThreeScene() {
 
   return <div ref={containerRef} className="w-full h-full" />
 }
+
+export default ThreeScene

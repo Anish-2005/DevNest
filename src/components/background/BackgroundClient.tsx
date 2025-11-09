@@ -1,8 +1,8 @@
 "use client"
 
-import ThreeScene from "./three-scene"
+import { ThreeScene } from "@/components/three/ThreeScene"
 
-export default function BackgroundClient() {
+export function BackgroundClient() {
   return (
     // wrapper preserves fixed full-bleed placement and prevents pointer capture
     <div className="fixed inset-0 -z-20 pointer-events-none">
@@ -10,3 +10,5 @@ export default function BackgroundClient() {
     </div>
   )
 }
+
+export default BackgroundClient

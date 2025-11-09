@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import BackgroundClient from "./background-client"
-import CursorTrail from "./cursor-trail"
+import { BackgroundClient } from "@/components/background/BackgroundClient"
+import { CursorTrail } from "@/components/effects/CursorTrail"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
