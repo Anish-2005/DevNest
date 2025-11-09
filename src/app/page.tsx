@@ -203,65 +203,10 @@ export default function Home() {
       ))}
 
       {/* ========== HEADER ========== */}
-      <motion.header
-        className="sticky top-0 z-50 backdrop-blur-md bg-[#0a0a0a]/80 border-b border-red-900/20 py-4"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
-          <motion.div className="flex items-center gap-2 group cursor-pointer" whileHover={{ scale: 1.05 }}>
-            <motion.div
-              className="w-10 h-10 rounded-lg bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center neon-glow-red"
-              animate={{ 
-                boxShadow: [
-                  "0 0 10px rgba(255, 0, 0, 0.5)",
-                  "0 0 20px rgba(255, 0, 0, 0.8)",
-                  "0 0 10px rgba(255, 0, 0, 0.5)"
-                ]
-              }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-            >
-              <Sparkles className="w-6 h-6 text-red-200" />
-            </motion.div>
-            <span className="st-title text-2xl text-neon-red st-flicker">
-              DevNest
-            </span>
-          </motion.div>          <nav className="hidden md:flex items-center gap-8">
-            {["Roadmaps", "Features", "Community", "Pricing"].map((item, i) => (
-              <motion.a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="relative st-retro text-sm font-medium text-red-200 hover:text-neon-red transition-colors"
-                whileHover={{ y: -2 }}
-              >
-                {item}
-                <motion.div
-                  className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-red-700 to-red-500"
-                  initial={{ width: 0 }}
-                  whileHover={{ width: "100%" }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.a>
-            ))}
-          </nav>
-
-          <motion.button
-            className="px-6 py-2 rounded-full bg-gradient-to-r from-red-700 to-red-900 font-semibold text-white shadow-lg neon-glow-red hover:shadow-red-500/70 transition-shadow st-retro"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get Started
-          </motion.button>
-        </div>
-      </motion.header>
+      <Header />
 
       {/* ========== HERO SECTION ========== */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 px-4 overflow-hidden">
-        {/* Hero 3D Scene */}
-        <div className="absolute inset-0 opacity-40">
-          <ThreeScene />
-        </div>
 
         <motion.div
           className="relative z-10 max-w-6xl mx-auto text-center"
@@ -703,47 +648,7 @@ export default function Home() {
       </section>
 
       {/* ========== FOOTER ========== */}
-      <motion.footer
-        className="relative border-t border-red-900/20 bg-black/90 backdrop-blur-sm py-12 px-4"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-            {[
-              { title: "Dimensions", links: ["Powers", "Pricing", "Containment", "Dark Map"] },
-              { title: "The Lab", links: ["Experiments", "Archives", "Recruitment", "Signals"] },
-              { title: "Lost Souls", links: ["Discord", "Twitter", "GitHub", "Transmissions"] },
-              { title: "Protocols", links: ["Privacy", "Terms", "Cookies", "Compliance"] },
-            ].map((col, i) => (
-              <div key={i}>
-                <h4 className="st-title font-bold mb-4 text-red-400 st-flicker">{col.title}</h4>
-                <ul className="space-y-2">
-                  {col.links.map((link, j) => (
-                    <li key={j}>
-                      <a href="#" className="st-retro text-red-300/50 hover:text-red-300 transition-colors">
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <div className="border-t border-red-900/30 pt-8 flex items-center justify-between text-red-400/50 text-sm st-retro">
-            <p>&copy; 2025 DevNest. All souls trapped.</p>
-            <div className="flex gap-4">
-              {["Twitter", "GitHub", "LinkedIn"].map((social) => (
-                <a key={social} href="#" className="hover:text-red-400 transition-colors">
-                  {social}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </motion.footer>
+      <Footer />
     </div>
   )
 }
