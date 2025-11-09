@@ -9,7 +9,7 @@ interface Step {
   progress: number
 }
 
-export default function DataVisualizer({ roadmapData }: { roadmapData: Step[] }) {
+export function DataVisualizer({ roadmapData }: { roadmapData: Step[] }) {
   const chartData = useMemo(() => {
     return roadmapData.map((step) => ({
       name: step.name.split(" ")[0],
@@ -77,3 +77,5 @@ export default function DataVisualizer({ roadmapData }: { roadmapData: Step[] })
     </motion.div>
   )
 }
+
+export default DataVisualizer

@@ -18,10 +18,11 @@ import {
   Skull,
 } from "lucide-react"
 import dynamic from "next/dynamic"
+import { Header } from "@/components/shared/Header"
+import { Footer } from "@/components/shared/Footer"
 
 // Dynamically import 3D components to avoid SSR issues
-const ThreeScene = dynamic(() => import("./three-scene"), { ssr: false })
-const DataVisualizer = dynamic(() => import("./data-viz"), { ssr: false })
+const DataVisualizer = dynamic(() => import("@/components/visualizations/DataVisualizer"), { ssr: false })
 
 // Enhanced animation variants
 const containerVariants: any = {
