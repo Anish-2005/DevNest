@@ -1,4 +1,4 @@
-# 🕸️ DevNest: The Upside Down of Full-Stack Learning
+# 🕸️ DevNest: The Upside Down of Full-Stack Development Learning
 
 > *"In the world of code, there's always another layer... Welcome to the Upside Down."*
 
