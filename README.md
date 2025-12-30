@@ -4,6 +4,8 @@
 
 DevNest is a **Stranger Things–themed full-stack development learning platform** that transforms coding education into an immersive adventure. Learn full-stack development through **quests, mysteries, and challenges** inspired by Hawkins, the Mind Flayer, and the Upside Down.  
 
+**⚠️ Experimental Development:** This is an experimental website currently in development with a Stranger Things theme. Features are subject to change, and bugs may lurk in the shadows.
+
 ---
 
 ## 🌌 Table of Contents
