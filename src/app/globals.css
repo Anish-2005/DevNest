@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=VT323&family=Creepster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -6,81 +6,81 @@
 
 :root {
   /* Stranger Things Dark Palette */
-  --background: oklch(0.05 0 0);
-  --foreground: oklch(0.95 0.05 30);
-  --card: oklch(0.08 0.02 30);
-  --card-foreground: oklch(0.95 0.05 30);
-  --popover: oklch(0.08 0.02 30);
-  --popover-foreground: oklch(0.95 0.05 30);
-  --primary: oklch(0.55 0.25 25);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.65 0.2 50);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.18 0.02 30);
-  --muted-foreground: oklch(0.55 0.05 30);
-  --accent: oklch(0.50 0.28 25);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.55 0.30 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.15 0.02 30);
-  --input: oklch(0.10 0.02 30);
-  --ring: oklch(0.55 0.25 25);
-  --chart-1: oklch(0.55 0.25 25);
-  --chart-2: oklch(0.65 0.2 50);
-  --chart-3: oklch(0.45 0.15 10);
-  --chart-4: oklch(0.60 0.22 35);
-  --chart-5: oklch(0.50 0.18 45);
+  --background: #070707; /* near-black */
+  --foreground: #f5f5f7; /* warm off-white */
+  --card: #0f1113; /* slightly lighter than background */
+  --card-foreground: #f7f7f8;
+  --popover: #0f1113;
+  --popover-foreground: #f7f7f8;
+  --primary: #b02a2a; /* muted crimson */
+  --primary-foreground: #fff7f7;
+  --secondary: #b36b00; /* warm amber */
+  --secondary-foreground: #fff7e6;
+  --muted: #222426;
+  --muted-foreground: #cfcfcf;
+  --accent: #8b1f1f; /* deep accent */
+  --accent-foreground: #fff6f6;
+  --destructive: #8b0000;
+  --destructive-foreground: #fff6f6;
+  --border: #221111;
+  --input: #0d0d0d;
+  --ring: #b02a2a;
+  --chart-1: #b02a2a;
+  --chart-2: #b36b00;
+  --chart-3: #6b2b2b;
+  --chart-4: #c04a2a;
+  --chart-5: #8a3b2f;
   --radius: 0.625rem;
-  --sidebar: oklch(0.08 0.02 30);
-  --sidebar-foreground: oklch(0.95 0.05 30);
-  --sidebar-primary: oklch(0.55 0.25 25);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.12 0.02 30);
-  --sidebar-accent-foreground: oklch(0.95 0.05 30);
-  --sidebar-border: oklch(0.15 0.02 30);
-  --sidebar-ring: oklch(0.55 0.25 25);
-  
-  /* Stranger Things Custom Colors */
-  --st-neon-red: #ff0000;
-  --st-neon-yellow: #ffeb3b;
-  --st-blood: #8b0000;
-  --st-dark: #0a0a0a;
-  --st-fog: rgba(139, 0, 0, 0.1);
+  --sidebar: #0d0d0d;
+  --sidebar-foreground: #f4f4f5;
+  --sidebar-primary: #8b1f1f;
+  --sidebar-primary-foreground: #fff6f6;
+  --sidebar-accent: #1b0b0b;
+  --sidebar-accent-foreground: #f4f4f5;
+  --sidebar-border: #241212;
+  --sidebar-ring: #c34a3a;
+
+  /* Stranger Things Custom Colors (softer neon) */
+  --st-neon-red: #ff4d4f;
+  --st-neon-yellow: #ffd54f;
+  --st-blood: #6b0000;
+  --st-dark: #070707;
+  --st-fog: rgba(139, 0, 0, 0.08);
 }
 
 .dark {
-  --background: oklch(0.08 0 0);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.12 0 0);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.12 0 0);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.65 0.3 280);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.45 0.2 290);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.25 0 0);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.55 0.25 200);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.22 0 0);
-  --input: oklch(0.15 0 0);
-  --ring: oklch(0.65 0.3 280);
-  --chart-1: oklch(0.65 0.3 280);
-  --chart-2: oklch(0.6 0.28 200);
-  --chart-3: oklch(0.7 0.25 150);
-  --chart-4: oklch(0.55 0.3 280);
-  --chart-5: oklch(0.75 0.2 100);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --background: #070707;
+  --foreground: #f3f3f4;
+  --card: #121212;
+  --card-foreground: #f7f7f8;
+  --popover: #121212;
+  --popover-foreground: #f7f7f8;
+  --primary: #c53b3b;
+  --primary-foreground: #fff8f8;
+  --secondary: #c77a1a;
+  --secondary-foreground: #fff7ea;
+  --muted: #2b2b2b;
+  --muted-foreground: #d0d0d0;
+  --accent: #b02a2a;
+  --accent-foreground: #fff6f6;
+  --destructive: #8b0000;
+  --destructive-foreground: #fff6f6;
+  --border: #2a1515;
+  --input: #0f0f0f;
+  --ring: #c53b3b;
+  --chart-1: #c53b3b;
+  --chart-2: #c77a1a;
+  --chart-3: #7a2b2b;
+  --chart-4: #d04a2a;
+  --chart-5: #9b3b2f;
+  --sidebar: #121212;
+  --sidebar-foreground: #f7f7f8;
+  --sidebar-primary: #a02a2a;
+  --sidebar-primary-foreground: #fff6f6;
+  --sidebar-accent: #231111;
+  --sidebar-accent-foreground: #f7f7f8;
+  --sidebar-border: #2c1414;
+  --sidebar-ring: #c34a3a;
 }
 
 @theme inline {
@@ -178,18 +178,20 @@
 }
 
 .st-title {
-  font-family: 'Bebas Neue', cursive;
-  letter-spacing: 0.1em;
-  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-shadow: none;
 }
 
 .st-retro {
-  font-family: 'VT323', monospace;
-  letter-spacing: 0.05em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Segoe UI Mono', monospace;
+  letter-spacing: 0.01em;
 }
 
 .st-flicker {
-  animation: flicker 3s infinite;
+  /* subtle emphasis removed to avoid distracting flicker */
+  animation: none;
 }
 
 .scanlines {
@@ -206,44 +208,36 @@
   bottom: 0;
   background: repeating-linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.15),
-    rgba(0, 0, 0, 0.15) 1px,
+    rgba(0, 0, 0, 0.06),
+    rgba(0, 0, 0, 0.06) 1px,
     transparent 1px,
     transparent 2px
   );
   pointer-events: none;
-  z-index: 1000;
+  z-index: 10;
 }
 
 
 
 .neon-glow-red {
-  box-shadow: 
-    0 0 10px rgba(255, 0, 0, 0.5),
-    0 0 20px rgba(255, 0, 0, 0.3),
-    0 0 30px rgba(255, 0, 0, 0.2),
-    inset 0 0 10px rgba(255, 0, 0, 0.1);
+  box-shadow:
+    0 0 6px rgba(255, 0, 0, 0.22),
+    0 0 12px rgba(255, 0, 0, 0.14),
+    inset 0 0 6px rgba(255, 0, 0, 0.06);
 }
 
 .neon-glow-yellow {
-  box-shadow: 
-    0 0 10px rgba(255, 235, 59, 0.5),
-    0 0 20px rgba(255, 235, 59, 0.3),
-    0 0 30px rgba(255, 235, 59, 0.2);
+  box-shadow:
+    0 0 6px rgba(255, 235, 59, 0.22),
+    0 0 12px rgba(255, 235, 59, 0.14);
 }
 
 .text-neon-red {
-  color: #ff0000;
-  text-shadow: 
-    0 0 5px rgba(255, 0, 0, 0.8),
-    0 0 10px rgba(255, 0, 0, 0.6),
-    0 0 15px rgba(255, 0, 0, 0.4);
+  color: #ff6b6b;
+  text-shadow: none;
 }
 
 .text-neon-yellow {
-  color: #ffeb3b;
-  text-shadow: 
-    0 0 5px rgba(255, 235, 59, 0.8),
-    0 0 10px rgba(255, 235, 59, 0.6),
-    0 0 15px rgba(255, 235, 59, 0.4);
+  color: #ffd54f;
+  text-shadow: none;
 }
