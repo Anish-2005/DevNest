@@ -319,14 +319,13 @@ export default function PortalPage() {
               </div>
 
               {/* CTA Button */}
-              <motion.button
+              <Link
+                href={`/portal/${path.id}`}
                 className={`relative z-10 w-full py-4 rounded-full bg-gradient-to-r ${path.gradient} font-bold text-lg shadow-lg neon-glow-red hover:shadow-red-700/80 transition-all st-retro flex items-center justify-center gap-2`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
-                Begin Journey
+                <span>Begin Journey</span>
                 <ChevronRight className="w-5 h-5" />
-              </motion.button>
+              </Link>
             </motion.div>
           ))}
         </div>
