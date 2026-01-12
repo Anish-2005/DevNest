@@ -4,6 +4,9 @@ import { Header } from "@/components/shared/Header"
 import { Footer } from "@/components/shared/Footer"
 import { BackgroundClient } from "@/components/background/BackgroundClient"
 import StartJourneyButton from "@/components/portal/StartJourneyButton"
+import PathDetailHero from "@/components/portal/PathDetailHero"
+import PathOverview from "@/components/portal/PathOverview"
+import StartWithList from "@/components/portal/StartWithList"
 
 type Module = { name: string; duration: string; icon?: any }
 
@@ -78,28 +81,9 @@ export default async function PathPage({ params }: { params: Promise<{ id: strin
       <Header />
 
       <main className="max-w-5xl mx-auto px-4 py-20">
-        <div className="mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-900/20 border border-red-700/40 text-red-200 text-sm font-medium st-retro neon-glow-red">
-            {path.difficulty}
-          </div>
-          <h1 className="st-title text-5xl font-black text-neon-red mt-6 mb-4">{path.title}</h1>
-          <p className="st-retro text-red-200/70 mb-6">{path.description}</p>
-        </div>
+        <PathDetailHero path={path} />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="p-6 rounded-xl bg-black/50 border border-red-900/20">
-            <h4 className="st-retro font-bold text-red-300 mb-2">Duration</h4>
-            <p className="st-retro text-red-200">{path.duration}</p>
-          </div>
-          <div className="p-6 rounded-xl bg-black/50 border border-red-900/20">
-            <h4 className="st-retro font-bold text-red-300 mb-2">Modules</h4>
-            <p className="st-retro text-red-200">{path.totalModules}</p>
-          </div>
-          <div className="p-6 rounded-xl bg-black/50 border border-red-900/20">
-            <h4 className="st-retro font-bold text-red-300 mb-2">Avg. Salary</h4>
-            <p className="st-title text-yellow-400 font-bold">{path.averageSalary}</p>
-          </div>
-        </div>
+        <PathOverview path={path} />
 
         <section className="mb-8">
           <h3 className="st-retro font-bold text-red-300 mb-4">Core Skills</h3>
@@ -110,21 +94,7 @@ export default async function PathPage({ params }: { params: Promise<{ id: strin
           </div>
         </section>
 
-        <section className="mb-8">
-          <h3 className="st-retro font-bold text-red-300 mb-4">Start With</h3>
-          <div className="space-y-2">
-            {path.startWith.map((m) => (
-              <div key={m.name} className="p-4 rounded-lg bg-black/40 border border-red-900/20">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-red-200 st-retro font-medium">{m.name}</p>
-                    <p className="text-red-400/60 text-xs st-retro">{m.duration}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <StartWithList startWith={path.startWith} />
 
         <div className="mt-8">
           <StartJourneyButton pathId={path.id} pathTitle={path.title} gradient={path.gradient} />
