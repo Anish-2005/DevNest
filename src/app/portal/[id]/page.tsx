@@ -67,8 +67,9 @@ const LEARNING_PATHS: Path[] = [
   },
 ]
 
-export default function PathPage({ params }: { params: { id: string } }) {
-  const path = LEARNING_PATHS.find((p) => p.id === params.id)
+export default async function PathPage({ params }: { params: Promise<{ id: string }> | { id: string } }) {
+  const resolvedParams = await params
+  const path = LEARNING_PATHS.find((p) => p.id === resolvedParams.id)
   if (!path) return notFound()
 
   return (
