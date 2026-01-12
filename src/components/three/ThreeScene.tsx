@@ -17,7 +17,7 @@ export function ThreeScene() {
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.setSize(window.innerWidth, window.innerHeight)
-    renderer.setClearColor(0x0a0a0a, 0.95) // dark, slightly opaque
+    renderer.setClearColor(0x0a0a0a, 0.82) // dark, slightly translucent for visibility
 
     // Ensure the canvas covers the screen and doesn't capture pointer events
     const canvas = renderer.domElement
@@ -26,7 +26,7 @@ export function ThreeScene() {
     canvas.style.left = "0"
     canvas.style.width = "100%"
     canvas.style.height = "100%"
-    canvas.style.zIndex = "-100"
+    canvas.style.zIndex = "-1"
     canvas.style.pointerEvents = "none"
 
     containerRef.current.appendChild(canvas)
@@ -51,6 +51,26 @@ export function ThreeScene() {
       new THREE.LineBasicMaterial({ color: 0xff0000, opacity: 0.4, transparent: true })
     )
     scene.add(wireframe)
+
+    // Home-only pulsing ring to emphasize portal on landing page
+    let homeRing: THREE.Mesh | null = null
+    const isHome = typeof window !== "undefined" && window.location && window.location.pathname === "/"
+    if (isHome) {
+      const ringGeom = new THREE.TorusGeometry(3.2, 0.12, 16, 120)
+      const ringMat = new THREE.MeshStandardMaterial({
+        color: 0xff6b6b,
+        emissive: 0xff4d4f,
+        emissiveIntensity: 0.6,
+        roughness: 0.7,
+        metalness: 0.1,
+        transparent: true,
+        opacity: 0.95,
+      })
+      homeRing = new THREE.Mesh(ringGeom, ringMat)
+      homeRing.rotation.x = Math.PI / 2
+      homeRing.position.z = 0
+      scene.add(homeRing)
+    }
 
     // Eerie Stranger Things Particles - Floating spores/ash
     const particleCount = 600
@@ -196,6 +216,19 @@ export function ThreeScene() {
       wireframe.rotation.x += 0.002
       wireframe.rotation.y += 0.004
 
+      // home ring pulse (if present)
+      if (homeRing) {
+        const t = performance.now() * 0.002
+        homeRing.scale.setScalar(1 + Math.sin(t) * 0.06)
+        // pulse emissive slightly
+        // @ts-ignore
+        if (homeRing.material && (homeRing.material as any).emissive) {
+          // @ts-ignore
+          ;(homeRing.material as any).emissiveIntensity = 0.55 + Math.abs(Math.sin(t)) * 0.25
+        }
+        homeRing.rotation.z += 0.0025
+      }
+
       // Rotate floating shapes
       shapes.forEach((shape, i) => {
         shape.rotation.x += 0.001 * (i % 2 === 0 ? 1 : -1)
@@ -261,6 +294,12 @@ export function ThreeScene() {
         })
         particlesGeometry.dispose()
         particlesMaterial.dispose()
+        if (homeRing) {
+          // @ts-ignore
+          homeRing.geometry && homeRing.geometry.dispose && homeRing.geometry.dispose()
+          // @ts-ignore
+          ;(homeRing.material as any) && (homeRing.material as any).dispose && (homeRing.material as any).dispose()
+        }
         shapeGeometries.forEach(g => g.dispose())
       } catch (e) {
         // ignore disposal errors
