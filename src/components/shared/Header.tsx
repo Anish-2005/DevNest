@@ -1,7 +1,10 @@
 "use client"
 import { motion } from "framer-motion"
-import { Code2 } from "lucide-react"
+import { Code2, LogOut } from "lucide-react"
 import Link from "next/link"
+import { useEffect, useState } from "react"
+import { onAuthStateChanged } from "firebase/auth"
+import { auth, signOutUser } from "@/lib/firebase"
 
 export function Header() {
   return (
@@ -27,8 +30,38 @@ export function Header() {
               {item}
             </Link>
           ))}
+
+          {/* Auth area */}
+          <AuthArea />
         </nav>
       </div>
     </motion.header>
+  )
+}
+
+function AuthArea() {
+  const [user, setUser] = useState<any>(null)
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (u) => setUser(u))
+    return () => unsub()
+  }, [])
+
+  if (!user) {
+    return (
+      <Link href="/login" className="px-3 py-2 rounded bg-black/40 border border-red-800 text-sm font-medium st-retro">
+        Sign In
+      </Link>
+    )
+  }
+
+  return (
+    <div className="flex items-center gap-3">
+      <div className="text-sm text-red-200 st-retro">{user.email}</div>
+      <button onClick={() => signOutUser()} className="px-3 py-2 rounded bg-black/40 border border-red-800 flex items-center gap-2">
+        <LogOut className="w-4 h-4" />
+        Sign Out
+      </button>
+    </div>
   )
 }
