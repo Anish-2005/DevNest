@@ -7,6 +7,7 @@ import StartJourneyButton from "@/components/portal/StartJourneyButton"
 import PathDetailHero from "@/components/portal/PathDetailHero"
 import PathOverview from "@/components/portal/PathOverview"
 import StartWithList from "@/components/portal/StartWithList"
+import learningPaths from "@/data/portalPaths"
 
 type Module = { name: string; duration: string; icon?: any }
 
@@ -26,53 +27,11 @@ type Path = {
   gradient?: string
 }
 
-// Minimal data copy — keep in sync with the portal listing
-const LEARNING_PATHS: Path[] = [
-  {
-    id: "web-dev",
-    title: "Web Development",
-    description: "Master the art of building modern web applications from the shadows",
-    duration: "4-6 months",
-    difficulty: "Beginner Friendly",
-    totalModules: 8,
-    skills: ["HTML/CSS", "JavaScript", "React", "Node.js", "Databases", "APIs"],
-    projects: 12,
-    jobs: "High Demand",
-    startWith: [
-      { name: "HTML & CSS Fundamentals", duration: "2 weeks" },
-      { name: "JavaScript Basics", duration: "3 weeks" },
-      { name: "React Framework", duration: "4 weeks" },
-      { name: "Backend with Node.js", duration: "4 weeks" },
-    ],
-    careerPaths: ["Frontend Developer", "Full-Stack Developer", "Web Designer"],
-    averageSalary: "$75,000 - $120,000",
-    gradient: "from-red-700 via-red-800 to-red-900",
-  },
-  {
-    id: "machine-learning",
-    title: "Machine Learning & AI",
-    description: "Unlock the supernatural powers of artificial intelligence and deep learning",
-    duration: "6-8 months",
-    difficulty: "Intermediate",
-    totalModules: 10,
-    skills: ["Python", "TensorFlow", "Neural Networks", "Data Science", "Statistics", "Deep Learning"],
-    projects: 15,
-    jobs: "Explosive Growth",
-    startWith: [
-      { name: "Python Programming", duration: "3 weeks" },
-      { name: "Math & Statistics", duration: "4 weeks" },
-      { name: "ML Fundamentals", duration: "5 weeks" },
-      { name: "Deep Learning", duration: "6 weeks" },
-    ],
-    careerPaths: ["ML Engineer", "Data Scientist", "AI Researcher"],
-    averageSalary: "$90,000 - $150,000",
-    gradient: "from-yellow-600 via-red-700 to-red-900",
-  },
-]
+// use centralized learningPaths from data file
 
 export default async function PathPage({ params }: { params: Promise<{ id: string }> | { id: string } }) {
   const resolvedParams = await params
-  const path = LEARNING_PATHS.find((p) => p.id === resolvedParams.id)
+  const path = learningPaths.find((p) => p.id === resolvedParams.id)
   if (!path) return notFound()
 
   return (
