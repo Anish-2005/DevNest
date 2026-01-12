@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { CursorTrail } from "@/components/effects/CursorTrail"
+import AuthGuard from "@/components/auth/AuthGuard"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,10 @@ export default function RootLayout({
         {/* Interactive cursor trail effect */}
         <CursorTrail />
 
-        {children}
+        {/* Protect all pages except landing/login via client-side guard */}
+        <AuthGuard>
+          {children}
+        </AuthGuard>
       </body>
     </html>
   );

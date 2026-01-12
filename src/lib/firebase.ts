@@ -35,3 +35,13 @@ if (typeof window !== "undefined") {
 }
 
 export default app
+
+// convenience signOut helper
+import { signOut as firebaseSignOut } from "firebase/auth"
+export const signOutUser = async () => {
+  try {
+    await firebaseSignOut(auth)
+  } catch (e) {
+    // ignore
+  }
+}
