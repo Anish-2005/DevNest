@@ -17,23 +17,25 @@ export default function StartJourneyButton({ pathId, pathTitle, gradient }: { pa
         enrollments.push({ id: pathId, title: pathTitle, startedAt: new Date().toISOString() })
         localStorage.setItem(key, JSON.stringify(enrollments))
       }
-    } catch (e) {
-      // ignore
+    } catch (_e) {
+      // no-op
     }
-    // small delay for UX then redirect back to portal overview
+
     setTimeout(() => {
       setLoading(false)
       router.push("/portal")
     }, 400)
   }
 
+  const gradientClass = gradient ?? "from-blue-500 to-cyan-500"
+
   return (
     <button
       onClick={handleStart}
-      className={`px-8 py-4 rounded-full bg-gradient-to-r ${gradient ?? "from-red-700 to-red-900"} font-bold text-lg shadow-lg neon-glow-red hover:shadow-red-700/80 transition-all st-retro`}
+      className={`inline-flex items-center justify-center rounded-xl bg-gradient-to-r ${gradientClass} px-8 py-3.5 text-sm font-semibold text-white shadow-[0_14px_35px_-18px_rgba(56,189,248,0.85)] transition-transform hover:-translate-y-0.5`}
       disabled={loading}
     >
-      {loading ? "Starting..." : "Start Journey"}
+      {loading ? "Starting..." : "Start journey"}
     </button>
   )
 }
