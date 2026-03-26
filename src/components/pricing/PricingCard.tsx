@@ -11,7 +11,7 @@ export default function PricingCard({ plan, index }: any) {
     <motion.div
       className={`relative rounded-2xl border p-7 backdrop-blur-xl ${
         plan.highlight
-          ? "border-sky-400/55 bg-slate-900/80 shadow-[0_16px_45px_-24px_rgba(56,189,248,0.65)]"
+          ? "border-red-700/60 bg-slate-900/80 shadow-[0_16px_45px_-24px_rgba(56,189,248,0.65)]"
           : "border-slate-700/60 bg-slate-900/65"
       }`}
       initial={{ opacity: 0, y: 16 }}
@@ -21,13 +21,13 @@ export default function PricingCard({ plan, index }: any) {
       whileHover={{ y: -4 }}
     >
       {plan.highlight && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 px-3 py-1 text-xs font-semibold text-white">
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-red-700 to-red-900 px-3 py-1 text-xs font-semibold text-white">
           Most Popular
         </div>
       )}
 
       <div className="mb-7 text-center">
-        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500">
+        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-900">
           <Icon className="h-7 w-7 text-white" />
         </div>
 
@@ -44,7 +44,7 @@ export default function PricingCard({ plan, index }: any) {
         {plan.features.map((feature: Feature, idx: number) => (
           <li key={idx} className="flex items-start gap-3 text-sm">
             {feature.included ? (
-              <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-cyan-300" />
+              <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-red-300" />
             ) : (
               <X className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-600" />
             )}

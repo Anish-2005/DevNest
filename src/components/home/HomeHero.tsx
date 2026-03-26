@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { motion, Variants } from "framer-motion"
-import { ArrowRight, BookOpen, CheckCircle2 } from "lucide-react"
+import { ArrowRight, Radio, Skull } from "lucide-react"
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -28,44 +28,49 @@ export default function HomeHero() {
   return (
     <section className="section-block">
       <motion.div
-        className="surface-card overflow-hidden p-8 sm:p-12"
+        className="surface-card relative overflow-hidden p-8 sm:p-12"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
+        <div className="floating-fog left-[-120px] top-[-140px] h-64 w-64 bg-red-700/25" />
+        <div className="floating-fog right-[-90px] bottom-[-130px] h-56 w-56 bg-amber-500/20 [animation-delay:1.5s]" />
+
         <motion.span variants={itemVariants} className="badge-pill">
-          <CheckCircle2 className="h-4 w-4" />
-          Production-Ready Learning Paths
+          <Radio className="h-4 w-4" />
+          Transmission Received
         </motion.span>
 
-        <motion.h1 variants={itemVariants} className="mt-6 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-          Build practical engineering skills that translate directly to real-world delivery.
+        <motion.h1 variants={itemVariants} className="st-title mt-6 max-w-4xl text-4xl sm:text-5xl lg:text-6xl">
+          Learn Web Dev
+          <br />
+          Beyond Reality
         </motion.h1>
 
-        <motion.p variants={itemVariants} className="mt-5 max-w-3xl text-base leading-relaxed text-slate-300 sm:text-lg">
-          DevNest combines structured curriculum, hands-on projects, and progress analytics to help you move from fundamentals to confident execution.
+        <motion.p variants={itemVariants} className="st-retro mt-5 max-w-3xl text-base leading-relaxed sm:text-lg">
+          The signal is unstable. The code is alive. Step into a parallel dimension where learning adapts, tracks, and evolves.
         </motion.p>
 
         <motion.div variants={itemVariants} className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link href="/portal" className="btn-primary">
-            Explore Learning Paths
+            Enter The Portal
             <ArrowRight className="h-4 w-4" />
           </Link>
           <Link href="/roadmaps" className="btn-secondary">
-            View Roadmaps
-            <BookOpen className="h-4 w-4" />
+            Watch The Signal
+            <Skull className="h-4 w-4" />
           </Link>
         </motion.div>
 
         <motion.div variants={itemVariants} className="mt-10 grid gap-4 sm:grid-cols-3">
           {[
-            { value: "50K+", label: "Active learners" },
-            { value: "200+", label: "Guided modules" },
-            { value: "4.9/5", label: "Learner rating" },
+            { value: "50K+", label: "Connected Minds" },
+            { value: "200+", label: "Escape Routes" },
+            { value: "4.9/5", label: "Signal Strength" },
           ].map((stat) => (
-            <div key={stat.label} className="rounded-xl border border-slate-700/70 bg-slate-900/50 p-4">
+            <div key={stat.label} className="rounded-xl border border-red-900/60 bg-black/40 p-4">
               <p className="text-2xl font-semibold text-white">{stat.value}</p>
-              <p className="mt-1 text-sm text-slate-400">{stat.label}</p>
+              <p className="mt-1 text-sm text-red-100/70">{stat.label}</p>
             </div>
           ))}
         </motion.div>

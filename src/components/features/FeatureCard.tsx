@@ -19,17 +19,17 @@ export function FeatureCard({ feature, index }: { feature: Feature; index: numbe
       transition={{ duration: 0.45, delay: index * 0.04 }}
       variants={cardVariants}
     >
-      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500">
+      <div className="neon-glow-red mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-900">
         <Icon className="h-6 w-6 text-white" />
       </div>
 
-      <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-slate-300">{feature.description}</p>
+      <h3 className="st-title text-2xl">{feature.title}</h3>
+      <p className="st-retro mt-3 text-sm leading-relaxed">{feature.description}</p>
 
       <ul className="mt-5 space-y-2">
         {feature.details.map((detail, idx) => (
-          <li key={idx} className="flex items-center gap-2 text-sm text-slate-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-cyan-300" />
+          <li key={idx} className="st-retro flex items-center gap-2 text-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-red-400" />
             {detail}
           </li>
         ))}

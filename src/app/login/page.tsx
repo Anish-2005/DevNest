@@ -74,7 +74,7 @@ export default function LoginPage() {
 
           <p className="mt-8 text-xs text-slate-400">
             New to DevNest?{" "}
-            <Link href="/" className="underline decoration-slate-500 underline-offset-2 hover:text-sky-200">
+            <Link href="/" className="underline decoration-slate-500 underline-offset-2 hover:text-red-200">
               Explore the platform
             </Link>
           </p>
@@ -139,10 +139,10 @@ export default function LoginPage() {
 
             <div className="flex items-center justify-between text-xs text-slate-400">
               <label className="flex items-center gap-2">
-                <input type="checkbox" className="h-4 w-4 accent-sky-400" />
+                <input type="checkbox" className="h-4 w-4 accent-red-700" />
                 Remember me
               </label>
-              <Link href="/" className="underline hover:text-sky-200">Forgot password?</Link>
+              <Link href="/" className="underline hover:text-red-200">Forgot password?</Link>
             </div>
           </form>
 

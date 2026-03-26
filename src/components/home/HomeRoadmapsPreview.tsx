@@ -8,7 +8,7 @@ export default function HomeRoadmapsPreview({ roadmaps, activeIndex, onSelect }:
   return (
     <section className="section-block" id="roadmaps">
       <div className="section-header">
-        <h2 className="section-title">Preview learning roadmap progress</h2>
+        <h2 className="section-title">Twisted Escape Routes</h2>
       </div>
 
       <div className="mb-8 flex flex-wrap justify-center gap-3">
@@ -49,12 +49,12 @@ export default function HomeRoadmapsPreview({ roadmaps, activeIndex, onSelect }:
                 transition={{ duration: 0.35, delay: i * 0.04 }}
               >
                 <div className="mb-3 flex items-center justify-between gap-3">
-                  <span className="text-sm font-medium text-slate-100 sm:text-base">{step.name}</span>
+                  <span className="text-sm font-medium text-red-50 sm:text-base">{step.name}</span>
                   <span className="chip">{step.progress}%</span>
                 </div>
-                <div className="h-2 overflow-hidden rounded-full bg-slate-800">
+                <div className="h-2 overflow-hidden rounded-full bg-red-950/50">
                   <motion.div
-                    className="h-full rounded-full bg-gradient-to-r from-blue-500 to-cyan-500"
+                    className="h-full rounded-full bg-gradient-to-r from-red-700 via-red-600 to-yellow-700"
                     initial={{ width: 0 }}
                     animate={{ width: `${step.progress}%` }}
                     transition={{ duration: 0.8, delay: 0.05 }}

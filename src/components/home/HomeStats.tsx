@@ -16,11 +16,11 @@ export default function HomeStats({ stats }: any) {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
             >
-              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-800 text-cyan-300">
+              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-red-950/35 text-red-300">
                 <Icon className="h-5 w-5" />
               </div>
               <p className="text-3xl font-semibold text-white">{stat.number}</p>
-              <p className="mt-1 text-sm text-slate-400">{stat.label}</p>
+              <p className="mt-1 text-sm text-red-100/70">{stat.label}</p>
             </motion.div>
           )
         })}

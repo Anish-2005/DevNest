@@ -12,7 +12,7 @@ export default function HomeFeatures({ features }: any) {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Platform capabilities built for modern developers
+          Supernatural Powers
         </motion.h2>
         <motion.p
           className="section-subtitle"
@@ -21,7 +21,7 @@ export default function HomeFeatures({ features }: any) {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.08 }}
         >
-          Every feature is designed to reduce friction and help you ship better software faster.
+          Harness dark forces to accelerate your journey through the code dimension.
         </motion.p>
       </div>
 
@@ -37,7 +37,7 @@ export default function HomeFeatures({ features }: any) {
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.06 }}
             >
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500">
+              <div className="neon-glow-red mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-900">
                 <Icon className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-white">{feature.title}</h3>

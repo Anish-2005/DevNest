@@ -13,13 +13,13 @@ export function FeaturesHero() {
       <motion.div variants={itemVariants} className="mb-6">
         <span className="badge-pill">
           <Sparkles className="h-4 w-4" />
-          Product Features
+          Supernatural Powers Unleashed
         </span>
       </motion.div>
 
-      <h1 className="section-title">Everything you need to learn and ship with confidence</h1>
+      <h1 className="section-title">All The Dark Features</h1>
       <p className="section-subtitle">
-        DevNest brings curriculum, mentorship, tooling, and analytics together in one professional learning environment.
+        Harness the complete arsenal of cursed tools and supernatural abilities to master full-stack development from the shadows.
       </p>
     </motion.div>
   )

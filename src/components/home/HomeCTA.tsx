@@ -13,16 +13,18 @@ export default function HomeCTA() {
         viewport={{ once: true }}
         transition={{ duration: 0.45 }}
       >
-        <span className="badge-pill">Start Today</span>
-        <h3 className="mx-auto mt-5 max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          Turn your learning plan into consistent execution.
+        <span className="badge-pill">The Portal Is Closing</span>
+        <h3 className="st-title mx-auto mt-5 max-w-3xl text-3xl sm:text-4xl">
+          Will You Escape The
+          <br />
+          Upside Down?
         </h3>
-        <p className="mx-auto mt-4 max-w-2xl text-base text-slate-300 sm:text-lg">
-          Join thousands of developers using DevNest to build stronger fundamentals and faster project delivery.
+        <p className="st-retro mx-auto mt-4 max-w-2xl text-base sm:text-lg">
+          Join 50K+ trapped souls who found their way through the darkness. Your escape route awaits.
         </p>
         <div className="mt-8">
           <Link href="/portal" className="btn-primary">
-            Get Started
+            Cross The Threshold
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

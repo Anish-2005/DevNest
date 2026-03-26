@@ -55,7 +55,7 @@ export default async function PathPage({ params }: { params: Promise<{ id: strin
         </div>
 
         <div className="mt-6">
-          <Link href="/portal" className="text-sm text-slate-400 hover:text-sky-200">? Back to portal</Link>
+          <Link href="/portal" className="text-sm text-slate-400 hover:text-red-200">? Back to portal</Link>
         </div>
       </main>
 

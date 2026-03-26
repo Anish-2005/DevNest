@@ -17,7 +17,7 @@ export default function RoadmapCard({ module, index }: any) {
           <h3 className="text-2xl font-semibold text-white">Module {index + 1}: {module.name}</h3>
           <p className="mt-1 text-sm text-slate-400">{module.duration}</p>
         </div>
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-sm font-semibold text-cyan-300">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-sm font-semibold text-red-300">
           {index + 1}
         </div>
       </div>
@@ -28,7 +28,7 @@ export default function RoadmapCard({ module, index }: any) {
           <ul className="space-y-2">
             {module.topics.map((topic: string, idx: number) => (
               <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
-                <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-cyan-300" />
+                <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-red-300" />
                 {topic}
               </li>
             ))}
@@ -39,7 +39,7 @@ export default function RoadmapCard({ module, index }: any) {
           <ul className="space-y-2">
             {module.projects.map((project: string, idx: number) => (
               <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
-                <ChevronRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-300" />
+                <ChevronRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-yellow-400" />
                 {project}
               </li>
             ))}

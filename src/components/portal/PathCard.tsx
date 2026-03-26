@@ -29,7 +29,7 @@ export default function PathCard({ path }: { path: any }) {
           <div className="text-xs text-slate-400">Projects</div>
         </div>
         <div className="rounded-lg border border-slate-700/60 bg-slate-900/55 p-3 text-center">
-          <div className="text-sm font-semibold text-cyan-300">{path.jobs}</div>
+          <div className="text-sm font-semibold text-red-300">{path.jobs}</div>
           <div className="text-xs text-slate-400">Demand</div>
         </div>
       </div>

@@ -27,7 +27,7 @@ export default function StartJourneyButton({ pathId, pathTitle, gradient }: { pa
     }, 400)
   }
 
-  const gradientClass = gradient ?? "from-blue-500 to-cyan-500"
+  const gradientClass = gradient ?? "from-red-700 to-red-900"
 
   return (
     <button
