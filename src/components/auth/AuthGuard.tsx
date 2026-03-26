@@ -20,7 +20,7 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
       if (user) {
         setChecking(false)
       } else {
-        router.replace('/login')
+        router.replace("/login")
       }
     })
 
@@ -29,10 +29,10 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
 
   if (checking) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center">
         <div className="text-center">
-          <div className="h-10 w-10 rounded-full border-4 border-red-600 animate-spin mx-auto" />
-          <p className="mt-4 text-sm text-red-300">Checking authentication…</p>
+          <div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-sky-500 border-t-cyan-300" />
+          <p className="mt-4 text-sm text-slate-300">Checking authentication...</p>
         </div>
       </div>
     )

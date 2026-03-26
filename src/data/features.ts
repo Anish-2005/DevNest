@@ -16,74 +16,74 @@ import {
 export const features = [
   {
     icon: Target,
-    title: "Cursed Paths",
-    description: "AI-conjured learning paths from the shadows, tailored to your fate and skill level",
+    title: "Adaptive Learning Paths",
+    description: "AI-curated paths tailored to your current skill level and target role.",
     details: ["Personalized curriculum", "Adaptive difficulty", "Progress tracking", "Skill assessments"]
   },
   {
     icon: Cpu,
-    title: "Psychic Feedback",
-    description: "Instant code readings and supernatural insights from beyond the veil",
+    title: "Intelligent Code Feedback",
+    description: "Get instant recommendations that improve quality, structure, and performance.",
     details: ["Real-time code analysis", "AI-powered suggestions", "Performance metrics", "Best practices guidance"]
   },
   {
     icon: Lock,
-    title: "Isolated Realm",
-    description: "Practice in dimensional pockets sealed from the real world",
+    title: "Secure Sandboxes",
+    description: "Practice in isolated environments designed for safe experimentation.",
     details: ["Sandbox environments", "Production simulations", "Safe experimentation", "Version control"]
   },
   {
     icon: Users,
-    title: "Lost Souls Network",
-    description: "Connect with 50K+ trapped developers in the Upside Down",
+    title: "Developer Community",
+    description: "Collaborate with 50K+ developers through discussions, reviews, and mentorship.",
     details: ["Peer collaboration", "Code reviews", "Discussion forums", "Mentorship program"]
   },
   {
     icon: TrendingUp,
-    title: "Flickering Analytics",
-    description: "Track your descent through the darkness with eerie metrics",
+    title: "Progress Analytics",
+    description: "Track growth with practical metrics focused on outcomes.",
     details: ["Learning progress", "Time tracking", "Skill graphs", "Achievement system"]
   },
   {
     icon: Lightbulb,
-    title: "Haunted Hints",
-    description: "Whispers from the void revealing your weaknesses",
+    title: "Contextual Guidance",
+    description: "Receive targeted tips and recommendations to close skill gaps faster.",
     details: ["Personalized tips", "Skill gap analysis", "Resource recommendations", "Learning strategies"]
   },
   {
     icon: Code2,
-    title: "Dark IDE Integration",
-    description: "Code directly in our possessed development environment",
+    title: "Integrated Web IDE",
+    description: "Code directly in a streamlined browser-based development environment.",
     details: ["Web-based IDE", "Syntax highlighting", "Auto-completion", "Debugging tools"]
   },
   {
     icon: Terminal,
-    title: "Terminal from Beyond",
-    description: "Command line interface connected to the shadow realm",
+    title: "Cloud Terminal",
+    description: "Use a full-featured terminal for real workflows and tooling.",
     details: ["Full terminal access", "Package management", "Git integration", "Custom scripts"]
   },
   {
     icon: Database,
-    title: "Spectral Databases",
-    description: "Master SQL and NoSQL in haunted data dimensions",
+    title: "Database Labs",
+    description: "Build practical SQL and NoSQL skills with guided hands-on exercises.",
     details: ["PostgreSQL", "MongoDB", "Redis", "MySQL practice"]
   },
   {
     icon: Server,
-    title: "Cursed Backend",
-    description: "Build APIs and servers in the darkest depths",
+    title: "Backend Engineering",
+    description: "Build robust APIs and services with modern backend practices.",
     details: ["Node.js", "Express", "REST APIs", "GraphQL"]
   },
   {
     icon: GitBranch,
-    title: "Version Control Spirits",
-    description: "Git workflows possessed by ancient developers",
+    title: "Version Control Workflows",
+    description: "Master collaborative Git workflows used by high-performing teams.",
     details: ["Git fundamentals", "Branching strategies", "Merge conflicts", "Collaboration"]
   },
   {
     icon: Cloud,
-    title: "Deployment Portals",
-    description: "Deploy your creations to the cloud dimension",
+    title: "Cloud Deployment",
+    description: "Ship projects confidently across modern hosting platforms.",
     details: ["Vercel", "Netlify", "AWS", "Docker"]
   }
 ]

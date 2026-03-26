@@ -2,9 +2,9 @@ import { Code2, Layers, Zap, Target, Cpu, Lock, Users, TrendingUp, Lightbulb, Sp
 
 export const roadmaps = [
   {
-    title: "Frontend Mastery",
+    title: "Frontend Engineering",
     icon: Code2,
-    color: "from-red-700 to-red-900",
+    color: "from-blue-500 to-cyan-500",
     steps: [
       { name: "HTML & CSS Fundamentals", progress: 100 },
       { name: "JavaScript ES6+", progress: 100 },
@@ -16,7 +16,7 @@ export const roadmaps = [
   {
     title: "Full-Stack Excellence",
     icon: Layers,
-    color: "from-red-800 to-red-950",
+    color: "from-indigo-500 to-blue-500",
     steps: [
       { name: "Node.js & Express", progress: 90 },
       { name: "Database Design", progress: 75 },
@@ -28,7 +28,7 @@ export const roadmaps = [
   {
     title: "Web Performance",
     icon: Zap,
-    color: "from-red-600 to-yellow-700",
+    color: "from-cyan-500 to-teal-500",
     steps: [
       { name: "Bundle Optimization", progress: 88 },
       { name: "Code Splitting", progress: 82 },
@@ -42,39 +42,39 @@ export const roadmaps = [
 export const features = [
   {
     icon: Target,
-    title: "Cursed Paths",
-    description: "AI-conjured learning paths from the shadows, tailored to your fate",
-    gradient: "from-red-700 to-red-900",
+    title: "Adaptive Learning Paths",
+    description: "Goal-based roadmaps that adjust to your experience and progress.",
+    gradient: "from-blue-500 to-cyan-500",
   },
   {
     icon: Cpu,
-    title: "Psychic Feedback",
-    description: "Instant code readings and supernatural insights from beyond",
-    gradient: "from-red-800 to-yellow-700",
+    title: "Intelligent Code Feedback",
+    description: "Instant suggestions focused on readability, architecture, and reliability.",
+    gradient: "from-indigo-500 to-blue-500",
   },
   {
     icon: Lock,
-    title: "Isolated Realm",
-    description: "Practice in dimensional pockets sealed from the real world",
-    gradient: "from-red-900 to-red-950",
+    title: "Secure Practice Environments",
+    description: "Experiment safely in isolated sandboxes that mirror production setups.",
+    gradient: "from-slate-500 to-indigo-500",
   },
   {
     icon: Users,
-    title: "Lost Souls Network",
-    description: "Connect with 50K+ trapped developers in the Upside Down",
-    gradient: "from-yellow-600 to-red-700",
+    title: "Collaborative Community",
+    description: "Learn with a global network of developers, mentors, and peers.",
+    gradient: "from-cyan-500 to-blue-600",
   },
   {
     icon: TrendingUp,
-    title: "Flickering Analytics",
-    description: "Track your descent through the darkness with eerie metrics",
-    gradient: "from-red-600 to-red-800",
+    title: "Progress Analytics",
+    description: "Track completion, strengths, and skill gaps through clear dashboards.",
+    gradient: "from-teal-500 to-cyan-500",
   },
   {
     icon: Lightbulb,
-    title: "Haunted Hints",
-    description: "Whispers from the void revealing your weaknesses",
-    gradient: "from-yellow-500 to-red-600",
+    title: "Contextual Guidance",
+    description: "Actionable hints and resources when you need support on difficult topics.",
+    gradient: "from-blue-500 to-indigo-500",
   },
 ]
 

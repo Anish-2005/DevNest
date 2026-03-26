@@ -2,10 +2,10 @@ import { Code2, Database, Layers } from "lucide-react"
 
 export const roadmaps = [
   {
-    title: "Frontend Dimension",
+    title: "Frontend Engineering Track",
     icon: Code2,
-    color: "from-red-700 to-red-900",
-    description: "Master the visible realm - HTML, CSS, JavaScript, and React",
+    color: "from-blue-500 to-cyan-500",
+    description: "Master HTML, CSS, JavaScript, and React with a production-ready mindset.",
     duration: "3-4 months",
     level: "Beginner to Advanced",
     modules: [
@@ -36,10 +36,10 @@ export const roadmaps = [
     ]
   },
   {
-    title: "Backend Abyss",
+    title: "Backend Engineering Track",
     icon: Database,
-    color: "from-red-800 to-red-950",
-    description: "Descend into server-side development with Node.js and databases",
+    color: "from-indigo-500 to-blue-500",
+    description: "Build resilient APIs and data systems using modern backend architecture.",
     duration: "4-5 months",
     level: "Intermediate",
     modules: [
@@ -70,10 +70,10 @@ export const roadmaps = [
     ]
   },
   {
-    title: "Full-Stack Portal",
+    title: "Full-Stack Architecture Track",
     icon: Layers,
-    color: "from-red-600 to-yellow-700",
-    description: "Master both dimensions - complete full-stack applications",
+    color: "from-cyan-500 to-teal-500",
+    description: "Design, build, and ship complete applications from interface to infrastructure.",
     duration: "6-8 months",
     level: "Advanced",
     modules: [

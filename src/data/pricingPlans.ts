@@ -1,12 +1,12 @@
-import { Ghost, Skull, Flame } from "lucide-react"
+import { Rocket, Briefcase, Crown } from "lucide-react"
 
 export const plans = [
   {
-    name: "Lost Soul",
-    icon: Ghost,
+    name: "Starter",
+    icon: Rocket,
     price: "Free",
     period: "Forever",
-    description: "For wanderers testing the waters of darkness",
+    description: "For individuals getting started with structured learning.",
     features: [
       { name: "5 basic courses", included: true },
       { name: "Community access", included: true },
@@ -17,15 +17,15 @@ export const plans = [
       { name: "Job board access", included: false },
       { name: "Advanced courses", included: false }
     ],
-    cta: "Enter Free",
+    cta: "Start Free",
     highlight: false
   },
   {
-    name: "Trapped Developer",
-    icon: Skull,
+    name: "Pro",
+    icon: Briefcase,
     price: "$29",
     period: "per month",
-    description: "For souls committed to escaping the void",
+    description: "For developers building skills for real projects and interviews.",
     features: [
       { name: "All courses & roadmaps", included: true },
       { name: "Community & forums", included: true },
@@ -36,17 +36,17 @@ export const plans = [
       { name: "Job board access", included: true },
       { name: "Priority support", included: false }
     ],
-    cta: "Start Escaping",
+    cta: "Upgrade to Pro",
     highlight: true
   },
   {
-    name: "Shadow Master",
-    icon: Flame,
+    name: "Enterprise",
+    icon: Crown,
     price: "$99",
     period: "per month",
-    description: "For those who've conquered the darkness",
+    description: "For teams that need advanced coaching and premium support.",
     features: [
-      { name: "Everything in Trapped", included: true },
+      { name: "Everything in Pro", included: true },
       { name: "Unlimited mentor sessions", included: true },
       { name: "Private community", included: true },
       { name: "Career coaching", included: true },
@@ -55,7 +55,7 @@ export const plans = [
       { name: "Custom learning paths", included: true },
       { name: "Priority support 24/7", included: true }
     ],
-    cta: "Achieve Mastery",
+    cta: "Contact Sales",
     highlight: false
   }
 ]

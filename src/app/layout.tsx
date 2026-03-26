@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { JetBrains_Mono, Manrope } from "next/font/google";
 import "./globals.css";
-import { CursorTrail } from "@/components/effects/CursorTrail"
 import AuthGuard from "@/components/auth/AuthGuard"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "DevNest - Enter the Upside Down of Learning",
-  description: "Master web development through the darkness. Interactive learning paths with an eerie 80s Stranger Things aesthetic.",
+  title: "DevNest | Professional Developer Learning Platform",
+  description: "Build production-ready skills with structured learning paths, practical projects, and guided progress tracking.",
 };
 
 export default function RootLayout({
@@ -27,13 +28,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${manrope.variable} ${jetBrainsMono.variable} font-sans`}
       >
-        
-        {/* Interactive cursor trail effect */}
-        <CursorTrail />
-
-        {/* Protect all pages except landing/login via client-side guard */}
         <AuthGuard>
           {children}
         </AuthGuard>

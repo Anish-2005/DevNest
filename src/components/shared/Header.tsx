@@ -1,72 +1,83 @@
 "use client"
 import { motion } from "framer-motion"
-import { Code2, LogOut, Menu, X, User, ChevronDown } from "lucide-react"
+import { Code2, LogOut, Menu, X, ChevronDown } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import { onAuthStateChanged } from "firebase/auth"
 import { auth, signOutUser } from "@/lib/firebase"
 
+const navItems = [
+  { label: "Portal", href: "/portal" },
+  { label: "Features", href: "/features" },
+  { label: "Roadmaps", href: "/roadmaps" },
+  { label: "Pricing", href: "/pricing" },
+]
+
 export function Header() {
   const [open, setOpen] = useState(false)
+
   return (
     <motion.header
-      className="sticky top-0 z-50 backdrop-blur-md bg-[#050405]/70 border-b border-red-900/20 py-3"
+      className="sticky top-0 z-50 border-b border-slate-700/55 bg-slate-950/70 py-3 backdrop-blur-xl"
       initial={{ opacity: 0, y: -16 }}
       animate={{ opacity: 1, y: 0 }}
     >
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-4">
+      <div className="page-container flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-3">
-          <motion.div
-            initial={{ scale: 0.96 }}
-            animate={{ scale: [0.98, 1, 0.99] }}
-            transition={{ duration: 2, repeat: Infinity, repeatDelay: 2 }}
-            className="w-10 h-10 rounded-lg bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center neon-glow-red"
-            aria-hidden
-          >
-            <Code2 className="w-5 h-5 text-red-100" />
-          </motion.div>
-          <span className="st-title text-lg md:text-2xl text-neon-red st-flicker">DevNest</span>
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-[0_10px_30px_-12px_rgba(56,189,248,0.95)]">
+            <Code2 className="h-5 w-5 text-white" />
+          </div>
+          <div className="leading-tight">
+            <p className="text-lg font-semibold tracking-tight text-white md:text-xl">DevNest</p>
+            <p className="hidden text-xs text-slate-400 sm:block">Developer Learning Platform</p>
+          </div>
         </Link>
 
-        {/* desktop nav */}
-        <nav className="hidden md:flex items-center gap-6 flex-1 justify-center">
-          {["Portal", "Features", "Roadmaps", "Pricing", "Community", "About"].map((item) => (
+        <nav className="hidden flex-1 items-center justify-center gap-2 md:flex">
+          {navItems.map((item) => (
             <Link
-              key={item}
-              href={`/${item.toLowerCase()}`}
-              className="st-retro text-sm font-medium text-red-200/90 hover:text-neon-red transition-colors px-3 py-1 rounded-md"
+              key={item.href}
+              href={item.href}
+              className="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-slate-800/70 hover:text-sky-200"
             >
-              {item}
+              {item.label}
             </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
-          <div className="hidden md:block">
+          <div className="hidden md:flex">
             <AuthArea compact={false} />
           </div>
 
-          {/* mobile menu toggle */}
           <button
             aria-label="Toggle menu"
             onClick={() => setOpen((s) => !s)}
-            className="md:hidden p-2 rounded bg-black/30 border border-red-800"
+            className="rounded-lg border border-slate-600/80 bg-slate-900/60 p-2 text-slate-200 md:hidden"
           >
-            {open ? <X className="w-5 h-5 text-red-200" /> : <Menu className="w-5 h-5 text-red-200" />}
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
 
-        {/* mobile nav panel */}
         {open && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="md:hidden absolute left-0 right-0 top-full bg-black/60 border-t border-red-900/20 backdrop-blur py-4">
-            <div className="max-w-4xl mx-auto px-4 flex flex-col gap-3">
-              {["Portal", "Features", "Roadmaps", "Pricing", "Community", "About"].map((item) => (
-                <Link key={item} href={`/${item.toLowerCase()}`} className="px-3 py-2 rounded text-red-100 hover:bg-red-900/5">
-                  {item}
+          <motion.div
+            initial={{ opacity: 0, y: -4 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="absolute inset-x-0 top-full border-t border-slate-700/60 bg-slate-950/90 py-4 backdrop-blur-xl md:hidden"
+          >
+            <div className="page-container flex flex-col gap-3">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-slate-100 hover:bg-slate-800/75"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
                 </Link>
               ))}
 
-              <div className="pt-2">
+              <div className="pt-1">
                 <AuthArea compact={true} />
               </div>
             </div>
@@ -99,7 +110,10 @@ function AuthArea({ compact = false }: AuthAreaProps) {
 
   if (!user) {
     return (
-      <Link href="/login" className={`px-3 py-2 rounded ${compact ? "block w-full text-center" : ""} bg-black/40 border border-red-800 text-sm font-medium st-retro`}>
+      <Link
+        href="/login"
+        className={`btn-secondary ${compact ? "w-full" : ""}`}
+      >
         Sign In
       </Link>
     )
@@ -109,18 +123,27 @@ function AuthArea({ compact = false }: AuthAreaProps) {
 
   return (
     <div className="relative" ref={ref}>
-      <button onClick={() => setOpen((s) => !s)} className="flex items-center gap-2 px-3 py-2 rounded bg-black/30 border border-red-800">
-        <div className="w-8 h-8 rounded-full bg-red-800/20 flex items-center justify-center text-xs text-red-100">{user.photoURL ? <img src={user.photoURL} alt="avatar" className="w-8 h-8 rounded-full object-cover" /> : initials}</div>
-        {!compact && <div className="text-sm text-red-200 st-retro">{user.email?.split("@")[0]}</div>}
-        <ChevronDown className="w-4 h-4 text-red-200" />
+      <button
+        onClick={() => setOpen((s) => !s)}
+        className="flex items-center gap-2 rounded-xl border border-slate-600/80 bg-slate-900/65 px-3 py-2 text-sm text-slate-100"
+      >
+        <div className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-slate-800 text-xs font-semibold text-sky-100">
+          {user.photoURL ? <img src={user.photoURL} alt="avatar" className="h-8 w-8 rounded-full object-cover" /> : initials}
+        </div>
+        {!compact && <div className="max-w-28 truncate">{user.email?.split("@")[0]}</div>}
+        <ChevronDown className="h-4 w-4 text-slate-300" />
       </button>
 
       {open && (
-        <motion.div initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} className="absolute right-0 mt-2 w-44 bg-black/80 border border-red-900/30 rounded-md shadow-lg py-2">
-          <Link href="/profile" className="block px-3 py-2 text-sm text-red-100 hover:bg-red-900/5">Profile</Link>
-          <Link href="/dashboard" className="block px-3 py-2 text-sm text-red-100 hover:bg-red-900/5">Dashboard</Link>
-          <button onClick={() => signOutUser()} className="w-full text-left px-3 py-2 text-sm text-red-100 hover:bg-red-900/5 flex items-center gap-2">
-            <LogOut className="w-4 h-4" />
+        <motion.div
+          initial={{ opacity: 0, y: -6 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="absolute right-0 mt-2 w-52 rounded-xl border border-slate-600/70 bg-slate-950/95 p-2 shadow-2xl"
+        >
+          <Link href="/portal" className="block rounded-lg px-3 py-2 text-sm text-slate-200 hover:bg-slate-800/70">My Portal</Link>
+          <Link href="/roadmaps" className="block rounded-lg px-3 py-2 text-sm text-slate-200 hover:bg-slate-800/70">Roadmaps</Link>
+          <button onClick={() => signOutUser()} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm text-slate-200 hover:bg-slate-800/70">
+            <LogOut className="h-4 w-4" />
             Sign out
           </button>
         </motion.div>

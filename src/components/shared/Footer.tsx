@@ -5,27 +5,27 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="relative mt-20 py-16 border-t border-red-900/20 backdrop-blur-xl bg-black/60">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+    <footer className="mt-20 border-t border-slate-700/60 bg-slate-950/55 py-14 backdrop-blur-xl">
+      <div className="page-container">
+        <div className="mb-12 grid gap-12 md:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center neon-glow-red">
-                <Code2 className="w-5 h-5 text-red-200" />
+            <div className="mb-4 flex items-center gap-2">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500">
+                <Code2 className="h-4 w-4 text-white" />
               </div>
-              <span className="st-title text-xl text-neon-red st-flicker">DevNest</span>
+              <span className="text-xl font-semibold text-white">DevNest</span>
             </div>
-            <p className="st-retro text-sm text-red-200/60">
-              Navigate the Upside Down of full-stack development
+            <p className="text-sm text-slate-400">
+              Structured developer education designed for modern engineering teams.
             </p>
           </div>
 
           <div>
-            <h4 className="st-retro font-bold text-red-300 mb-4">Learn</h4>
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-200">Learn</h4>
             <ul className="space-y-2">
               {["Features", "Roadmaps", "Pricing"].map((item) => (
                 <li key={item}>
-                  <Link href={`/${item.toLowerCase()}`} className="st-retro text-sm text-red-200/60 hover:text-neon-red transition-colors">
+                  <Link href={`/${item.toLowerCase()}`} className="text-sm text-slate-400 hover:text-sky-200">
                     {item}
                   </Link>
                 </li>
@@ -34,12 +34,16 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="st-retro font-bold text-red-300 mb-4">Community</h4>
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-200">Company</h4>
             <ul className="space-y-2">
-              {["About", "Community", "Support"].map((item) => (
-                <li key={item}>
-                  <Link href={`/${item.toLowerCase()}`} className="st-retro text-sm text-red-200/60 hover:text-neon-red transition-colors">
-                    {item}
+              {[
+                { label: "Portal", href: "/portal" },
+                { label: "Login", href: "/login" },
+                { label: "Support", href: "/pricing" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="text-sm text-slate-400 hover:text-sky-200">
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -47,27 +51,25 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="st-retro font-bold text-red-300 mb-4">Connect</h4>
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-200">Connect</h4>
             <div className="flex gap-4">
               {[Github, Twitter, Linkedin].map((Icon, i) => (
                 <motion.a
                   key={i}
                   href="#"
-                  className="w-10 h-10 rounded-lg bg-red-900/20 border border-red-700/40 flex items-center justify-center hover:bg-red-900/40 transition-colors neon-glow-red"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-600/70 bg-slate-900/75 text-slate-300 transition-colors hover:border-sky-400/50 hover:text-sky-200"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Icon className="w-5 h-5 text-red-300" />
+                  <Icon className="h-5 w-5" />
                 </motion.a>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-red-900/20 text-center">
-          <p className="st-retro text-sm text-red-200/60">
-            Â© 2025 DevNest. All souls trapped in the Upside Down.
-          </p>
+        <div className="border-t border-slate-700/60 pt-8 text-center">
+          <p className="text-sm text-slate-400">© 2026 DevNest. All rights reserved.</p>
         </div>
       </div>
     </footer>
