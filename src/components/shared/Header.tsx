@@ -18,18 +18,18 @@ export function Header() {
 
   return (
     <motion.header
-      className="sticky top-0 z-50 border-b border-slate-700/55 bg-slate-950/70 py-3 backdrop-blur-xl"
-      initial={{ opacity: 0, y: -16 }}
+      className="sticky top-0 z-50 border-b border-red-900/45 bg-black/55 py-3 backdrop-blur-xl"
+      initial={{ opacity: 0, y: -12 }}
       animate={{ opacity: 1, y: 0 }}
     >
       <div className="page-container flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-[0_10px_30px_-12px_rgba(56,189,248,0.95)]">
-            <Code2 className="h-5 w-5 text-white" />
+          <div className="neon-glow-red flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-900">
+            <Code2 className="h-5 w-5 text-red-100" />
           </div>
           <div className="leading-tight">
-            <p className="text-lg font-semibold tracking-tight text-white md:text-xl">DevNest</p>
-            <p className="hidden text-xs text-slate-400 sm:block">Developer Learning Platform</p>
+            <p className="st-title st-flicker text-lg md:text-2xl">DevNest</p>
+            <p className="st-retro hidden text-[11px] uppercase sm:block">Hawkins Learning Lab</p>
           </div>
         </Link>
 
@@ -38,7 +38,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-slate-800/70 hover:text-sky-200"
+              className="rounded-lg px-4 py-2 text-sm font-medium text-red-100/80 transition-colors hover:bg-red-950/35 hover:text-red-100"
             >
               {item.label}
             </Link>
@@ -53,7 +53,7 @@ export function Header() {
           <button
             aria-label="Toggle menu"
             onClick={() => setOpen((s) => !s)}
-            className="rounded-lg border border-slate-600/80 bg-slate-900/60 p-2 text-slate-200 md:hidden"
+            className="rounded-lg border border-red-900/60 bg-black/60 p-2 text-red-100 md:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -63,14 +63,14 @@ export function Header() {
           <motion.div
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
-            className="absolute inset-x-0 top-full border-t border-slate-700/60 bg-slate-950/90 py-4 backdrop-blur-xl md:hidden"
+            className="absolute inset-x-0 top-full border-t border-red-900/45 bg-black/85 py-4 backdrop-blur-xl md:hidden"
           >
             <div className="page-container flex flex-col gap-3">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-slate-100 hover:bg-slate-800/75"
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-red-100/90 hover:bg-red-950/40"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
@@ -125,24 +125,24 @@ function AuthArea({ compact = false }: AuthAreaProps) {
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen((s) => !s)}
-        className="flex items-center gap-2 rounded-xl border border-slate-600/80 bg-slate-900/65 px-3 py-2 text-sm text-slate-100"
+        className="flex items-center gap-2 rounded-xl border border-red-900/60 bg-black/60 px-3 py-2 text-sm text-red-50"
       >
-        <div className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-slate-800 text-xs font-semibold text-sky-100">
+        <div className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-red-950/50 text-xs font-semibold text-red-100">
           {user.photoURL ? <img src={user.photoURL} alt="avatar" className="h-8 w-8 rounded-full object-cover" /> : initials}
         </div>
         {!compact && <div className="max-w-28 truncate">{user.email?.split("@")[0]}</div>}
-        <ChevronDown className="h-4 w-4 text-slate-300" />
+        <ChevronDown className="h-4 w-4 text-red-100/80" />
       </button>
 
       {open && (
         <motion.div
           initial={{ opacity: 0, y: -6 }}
           animate={{ opacity: 1, y: 0 }}
-          className="absolute right-0 mt-2 w-52 rounded-xl border border-slate-600/70 bg-slate-950/95 p-2 shadow-2xl"
+          className="absolute right-0 mt-2 w-52 rounded-xl border border-red-900/60 bg-black/95 p-2 shadow-2xl"
         >
-          <Link href="/portal" className="block rounded-lg px-3 py-2 text-sm text-slate-200 hover:bg-slate-800/70">My Portal</Link>
-          <Link href="/roadmaps" className="block rounded-lg px-3 py-2 text-sm text-slate-200 hover:bg-slate-800/70">Roadmaps</Link>
-          <button onClick={() => signOutUser()} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm text-slate-200 hover:bg-slate-800/70">
+          <Link href="/portal" className="block rounded-lg px-3 py-2 text-sm text-red-100 hover:bg-red-950/35">My Portal</Link>
+          <Link href="/roadmaps" className="block rounded-lg px-3 py-2 text-sm text-red-100 hover:bg-red-950/35">Roadmaps</Link>
+          <button onClick={() => signOutUser()} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm text-red-100 hover:bg-red-950/35">
             <LogOut className="h-4 w-4" />
             Sign out
           </button>
@@ -151,4 +151,3 @@ function AuthArea({ compact = false }: AuthAreaProps) {
     </div>
   )
 }
-

@@ -10,85 +10,84 @@ import {
   Database,
   Server,
   GitBranch,
-  Cloud
+  Cloud,
 } from "lucide-react"
 
 export const features = [
   {
     icon: Target,
-    title: "Adaptive Learning Paths",
-    description: "AI-curated paths tailored to your current skill level and target role.",
-    details: ["Personalized curriculum", "Adaptive difficulty", "Progress tracking", "Skill assessments"]
+    title: "Cursed Paths",
+    description: "AI-conjured roadmaps from the shadows, tuned to your skill level.",
+    details: ["Personalized curriculum", "Adaptive difficulty", "Progress tracking", "Skill assessments"],
   },
   {
     icon: Cpu,
-    title: "Intelligent Code Feedback",
-    description: "Get instant recommendations that improve quality, structure, and performance.",
-    details: ["Real-time code analysis", "AI-powered suggestions", "Performance metrics", "Best practices guidance"]
+    title: "Psychic Feedback",
+    description: "Real-time code insights beamed straight from the void.",
+    details: ["Live code analysis", "AI suggestions", "Performance metrics", "Best practices guidance"],
   },
   {
     icon: Lock,
-    title: "Secure Sandboxes",
-    description: "Practice in isolated environments designed for safe experimentation.",
-    details: ["Sandbox environments", "Production simulations", "Safe experimentation", "Version control"]
+    title: "Isolated Realm",
+    description: "Practice safely in dimensional pockets cut off from reality.",
+    details: ["Sandbox environments", "Production simulations", "Safe experimentation", "Version control"],
   },
   {
     icon: Users,
-    title: "Developer Community",
-    description: "Collaborate with 50K+ developers through discussions, reviews, and mentorship.",
-    details: ["Peer collaboration", "Code reviews", "Discussion forums", "Mentorship program"]
+    title: "Lost Souls Network",
+    description: "Collaborate with 50K+ developers escaping the Upside Down.",
+    details: ["Peer collaboration", "Code reviews", "Discussion forums", "Mentorship circles"],
   },
   {
     icon: TrendingUp,
-    title: "Progress Analytics",
-    description: "Track growth with practical metrics focused on outcomes.",
-    details: ["Learning progress", "Time tracking", "Skill graphs", "Achievement system"]
+    title: "Flickering Analytics",
+    description: "Track your descent through charts, streaks, and milestones.",
+    details: ["Learning progress", "Time tracking", "Skill graphs", "Achievement system"],
   },
   {
     icon: Lightbulb,
-    title: "Contextual Guidance",
-    description: "Receive targeted tips and recommendations to close skill gaps faster.",
-    details: ["Personalized tips", "Skill gap analysis", "Resource recommendations", "Learning strategies"]
+    title: "Haunted Hints",
+    description: "Receive whispers where your strategy is weak.",
+    details: ["Personalized tips", "Skill gap analysis", "Resource recommendations", "Learning strategies"],
   },
   {
     icon: Code2,
-    title: "Integrated Web IDE",
-    description: "Code directly in a streamlined browser-based development environment.",
-    details: ["Web-based IDE", "Syntax highlighting", "Auto-completion", "Debugging tools"]
+    title: "Dark IDE Integration",
+    description: "Write code inside a possessed but polished web IDE.",
+    details: ["Web-based IDE", "Syntax highlighting", "Auto-completion", "Debugging tools"],
   },
   {
     icon: Terminal,
-    title: "Cloud Terminal",
-    description: "Use a full-featured terminal for real workflows and tooling.",
-    details: ["Full terminal access", "Package management", "Git integration", "Custom scripts"]
+    title: "Terminal From Beyond",
+    description: "Run commands through a haunted shell with full power.",
+    details: ["Terminal access", "Package management", "Git integration", "Custom scripts"],
   },
   {
     icon: Database,
-    title: "Database Labs",
-    description: "Build practical SQL and NoSQL skills with guided hands-on exercises.",
-    details: ["PostgreSQL", "MongoDB", "Redis", "MySQL practice"]
+    title: "Spectral Databases",
+    description: "Master SQL and NoSQL across eerie data dimensions.",
+    details: ["PostgreSQL", "MongoDB", "Redis", "MySQL practice"],
   },
   {
     icon: Server,
-    title: "Backend Engineering",
-    description: "Build robust APIs and services with modern backend practices.",
-    details: ["Node.js", "Express", "REST APIs", "GraphQL"]
+    title: "Cursed Backend",
+    description: "Build APIs and services in the deepest layers of the lab.",
+    details: ["Node.js", "Express", "REST APIs", "GraphQL"],
   },
   {
     icon: GitBranch,
-    title: "Version Control Workflows",
-    description: "Master collaborative Git workflows used by high-performing teams.",
-    details: ["Git fundamentals", "Branching strategies", "Merge conflicts", "Collaboration"]
+    title: "Version Control Spirits",
+    description: "Collaborative Git rituals used by veteran engineers.",
+    details: ["Git fundamentals", "Branching strategies", "Merge conflicts", "Team workflows"],
   },
   {
     icon: Cloud,
-    title: "Cloud Deployment",
-    description: "Ship projects confidently across modern hosting platforms.",
-    details: ["Vercel", "Netlify", "AWS", "Docker"]
-  }
+    title: "Deployment Portals",
+    description: "Ship your creations to the cloud before the gate closes.",
+    details: ["Vercel", "Netlify", "AWS", "Docker"],
+  },
 ]
 
 export type Feature = typeof features[number]
 
 export default features
-

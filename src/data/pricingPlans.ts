@@ -1,12 +1,12 @@
-import { Rocket, Briefcase, Crown } from "lucide-react"
+import { Ghost, Skull, Flame } from "lucide-react"
 
 export const plans = [
   {
-    name: "Starter",
-    icon: Rocket,
+    name: "Lost Soul",
+    icon: Ghost,
     price: "Free",
     period: "Forever",
-    description: "For individuals getting started with structured learning.",
+    description: "For wanderers testing the waters of darkness.",
     features: [
       { name: "5 basic courses", included: true },
       { name: "Community access", included: true },
@@ -15,17 +15,17 @@ export const plans = [
       { name: "Mentor support", included: false },
       { name: "Certificate", included: false },
       { name: "Job board access", included: false },
-      { name: "Advanced courses", included: false }
+      { name: "Advanced courses", included: false },
     ],
-    cta: "Start Free",
-    highlight: false
+    cta: "Enter Free",
+    highlight: false,
   },
   {
-    name: "Pro",
-    icon: Briefcase,
+    name: "Trapped Developer",
+    icon: Skull,
     price: "$29",
     period: "per month",
-    description: "For developers building skills for real projects and interviews.",
+    description: "For souls committed to escaping the void.",
     features: [
       { name: "All courses & roadmaps", included: true },
       { name: "Community & forums", included: true },
@@ -34,31 +34,30 @@ export const plans = [
       { name: "1-on-1 mentor sessions", included: true },
       { name: "Completion certificates", included: true },
       { name: "Job board access", included: true },
-      { name: "Priority support", included: false }
+      { name: "Priority support", included: false },
     ],
-    cta: "Upgrade to Pro",
-    highlight: true
+    cta: "Start Escaping",
+    highlight: true,
   },
   {
-    name: "Enterprise",
-    icon: Crown,
+    name: "Shadow Master",
+    icon: Flame,
     price: "$99",
     period: "per month",
-    description: "For teams that need advanced coaching and premium support.",
+    description: "For those who have conquered the darkness.",
     features: [
-      { name: "Everything in Pro", included: true },
+      { name: "Everything in Trapped", included: true },
       { name: "Unlimited mentor sessions", included: true },
       { name: "Private community", included: true },
       { name: "Career coaching", included: true },
       { name: "Interview prep", included: true },
       { name: "Lifetime access", included: true },
       { name: "Custom learning paths", included: true },
-      { name: "Priority support 24/7", included: true }
+      { name: "Priority support 24/7", included: true },
     ],
-    cta: "Contact Sales",
-    highlight: false
-  }
+    cta: "Achieve Mastery",
+    highlight: false,
+  },
 ]
 
 export default plans
-

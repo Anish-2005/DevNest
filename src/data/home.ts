@@ -2,33 +2,33 @@ import { Code2, Layers, Zap, Target, Cpu, Lock, Users, TrendingUp, Lightbulb, Sp
 
 export const roadmaps = [
   {
-    title: "Frontend Engineering",
+    title: "Frontend Escape Route",
     icon: Code2,
-    color: "from-blue-500 to-cyan-500",
+    color: "from-red-700 to-red-900",
     steps: [
-      { name: "HTML & CSS Fundamentals", progress: 100 },
-      { name: "JavaScript ES6+", progress: 100 },
-      { name: "React & Components", progress: 85 },
+      { name: "HTML & CSS Signals", progress: 100 },
+      { name: "JavaScript Echoes", progress: 100 },
+      { name: "React Portals", progress: 85 },
       { name: "State Management", progress: 70 },
-      { name: "Performance Optimization", progress: 45 },
+      { name: "Performance Exorcism", progress: 45 },
     ],
   },
   {
-    title: "Full-Stack Excellence",
+    title: "Full-Stack Abyss",
     icon: Layers,
-    color: "from-indigo-500 to-blue-500",
+    color: "from-red-800 to-red-950",
     steps: [
       { name: "Node.js & Express", progress: 90 },
-      { name: "Database Design", progress: 75 },
-      { name: "API Development", progress: 80 },
-      { name: "Authentication & Security", progress: 60 },
-      { name: "Deployment & DevOps", progress: 50 },
+      { name: "Database Vault", progress: 75 },
+      { name: "API Rituals", progress: 80 },
+      { name: "Auth & Security", progress: 60 },
+      { name: "Deployment Gate", progress: 50 },
     ],
   },
   {
-    title: "Web Performance",
+    title: "Performance Lab",
     icon: Zap,
-    color: "from-cyan-500 to-teal-500",
+    color: "from-red-700 to-yellow-700",
     steps: [
       { name: "Bundle Optimization", progress: 88 },
       { name: "Code Splitting", progress: 82 },
@@ -42,48 +42,47 @@ export const roadmaps = [
 export const features = [
   {
     icon: Target,
-    title: "Adaptive Learning Paths",
-    description: "Goal-based roadmaps that adjust to your experience and progress.",
-    gradient: "from-blue-500 to-cyan-500",
+    title: "Cursed Paths",
+    description: "AI-conjured learning routes tailored to your fate and skill level.",
+    gradient: "from-red-700 to-red-900",
   },
   {
     icon: Cpu,
-    title: "Intelligent Code Feedback",
-    description: "Instant suggestions focused on readability, architecture, and reliability.",
-    gradient: "from-indigo-500 to-blue-500",
+    title: "Psychic Feedback",
+    description: "Instant code readings and supernatural hints from beyond the veil.",
+    gradient: "from-red-800 to-yellow-700",
   },
   {
     icon: Lock,
-    title: "Secure Practice Environments",
-    description: "Experiment safely in isolated sandboxes that mirror production setups.",
-    gradient: "from-slate-500 to-indigo-500",
+    title: "Isolated Realm",
+    description: "Practice in protected sandboxes sealed from production reality.",
+    gradient: "from-red-900 to-red-950",
   },
   {
     icon: Users,
-    title: "Collaborative Community",
-    description: "Learn with a global network of developers, mentors, and peers.",
-    gradient: "from-cyan-500 to-blue-600",
+    title: "Lost Souls Network",
+    description: "Join 50K+ developers navigating the Upside Down together.",
+    gradient: "from-yellow-700 to-red-700",
   },
   {
     icon: TrendingUp,
-    title: "Progress Analytics",
-    description: "Track completion, strengths, and skill gaps through clear dashboards.",
-    gradient: "from-teal-500 to-cyan-500",
+    title: "Flickering Analytics",
+    description: "Track progress with eerie dashboards and milestone omens.",
+    gradient: "from-red-600 to-red-800",
   },
   {
     icon: Lightbulb,
-    title: "Contextual Guidance",
-    description: "Actionable hints and resources when you need support on difficult topics.",
-    gradient: "from-blue-500 to-indigo-500",
+    title: "Haunted Hints",
+    description: "Get whispered recommendations when the challenge gets dark.",
+    gradient: "from-yellow-600 to-red-700",
   },
 ]
 
 export const stats = [
-  { number: "50K+", label: "Learners Worldwide", icon: Users },
-  { number: "15K+", label: "Projects Completed", icon: Code2 },
-  { number: "4.9/5", label: "Satisfaction Rate", icon: Sparkles },
-  { number: "24/7", label: "AI Support", icon: Cpu },
+  { number: "50K+", label: "Trapped Learners", icon: Users },
+  { number: "15K+", label: "Artifacts Shipped", icon: Code2 },
+  { number: "4.9/5", label: "Signal Clarity", icon: Sparkles },
+  { number: "24/7", label: "Watcher Support", icon: Cpu },
 ]
 
 export default { roadmaps, features, stats }
-

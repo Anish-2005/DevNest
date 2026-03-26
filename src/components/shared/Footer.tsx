@@ -5,27 +5,27 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="mt-20 border-t border-slate-700/60 bg-slate-950/55 py-14 backdrop-blur-xl">
+    <footer className="mt-20 border-t border-red-900/40 bg-black/60 py-14 backdrop-blur-xl">
       <div className="page-container">
         <div className="mb-12 grid gap-12 md:grid-cols-4">
           <div>
             <div className="mb-4 flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500">
-                <Code2 className="h-4 w-4 text-white" />
+              <div className="neon-glow-red flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-red-700 to-red-900">
+                <Code2 className="h-4 w-4 text-red-100" />
               </div>
-              <span className="text-xl font-semibold text-white">DevNest</span>
+              <span className="st-title text-xl">DevNest</span>
             </div>
-            <p className="text-sm text-slate-400">
-              Structured developer education designed for modern engineering teams.
+            <p className="st-retro text-sm">
+              Navigate the Upside Down of full-stack development.
             </p>
           </div>
 
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-200">Learn</h4>
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.12em] text-red-100">Learn</h4>
             <ul className="space-y-2">
               {["Features", "Roadmaps", "Pricing"].map((item) => (
                 <li key={item}>
-                  <Link href={`/${item.toLowerCase()}`} className="text-sm text-slate-400 hover:text-sky-200">
+                  <Link href={`/${item.toLowerCase()}`} className="text-sm text-red-100/70 hover:text-red-100">
                     {item}
                   </Link>
                 </li>
@@ -34,7 +34,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-200">Company</h4>
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.12em] text-red-100">Community</h4>
             <ul className="space-y-2">
               {[
                 { label: "Portal", href: "/portal" },
@@ -42,7 +42,7 @@ export function Footer() {
                 { label: "Support", href: "/pricing" },
               ].map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="text-sm text-slate-400 hover:text-sky-200">
+                  <Link href={item.href} className="text-sm text-red-100/70 hover:text-red-100">
                     {item.label}
                   </Link>
                 </li>
@@ -51,13 +51,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-200">Connect</h4>
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.12em] text-red-100">Signal</h4>
             <div className="flex gap-4">
               {[Github, Twitter, Linkedin].map((Icon, i) => (
                 <motion.a
                   key={i}
                   href="#"
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-600/70 bg-slate-900/75 text-slate-300 transition-colors hover:border-sky-400/50 hover:text-sky-200"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-red-900/60 bg-black/70 text-red-100/80 transition-colors hover:border-red-700 hover:text-red-100"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -68,11 +68,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-700/60 pt-8 text-center">
-          <p className="text-sm text-slate-400">© 2026 DevNest. All rights reserved.</p>
+        <div className="border-t border-red-900/35 pt-8 text-center">
+          <p className="st-retro text-sm">© 2026 DevNest. All souls trapped in the Upside Down.</p>
         </div>
       </div>
     </footer>
   )
 }
-
