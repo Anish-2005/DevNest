@@ -69,3 +69,4 @@ export function CursorTrail() {
 }
 
 export default CursorTrail
+

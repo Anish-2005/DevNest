@@ -28,3 +28,4 @@ export default function HomeStats({ stats }: any) {
     </section>
   )
 }
+

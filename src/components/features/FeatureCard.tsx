@@ -39,3 +39,4 @@ export function FeatureCard({ feature, index }: { feature: Feature; index: numbe
 }
 
 export default FeatureCard
+

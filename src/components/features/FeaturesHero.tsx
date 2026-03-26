@@ -26,3 +26,4 @@ export function FeaturesHero() {
 }
 
 export default FeaturesHero
+

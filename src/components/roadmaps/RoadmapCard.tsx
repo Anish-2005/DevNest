@@ -1,46 +1,45 @@
 "use client"
 import { motion } from "framer-motion"
 import { Check, ChevronRight } from "lucide-react"
-import React from "react"
 
 export default function RoadmapCard({ module, index }: any) {
   return (
     <motion.div
       key={index}
-      className="group p-8 rounded-2xl border-2 border-red-900/30 bg-black/60 backdrop-blur-xl hover:border-red-700/60 transition-all neon-glow-red"
-      initial={{ opacity: 0, x: -20 }}
+      className="surface-card p-6 sm:p-7"
+      initial={{ opacity: 0, x: -12 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ x: 10, scale: 1.01 }}
+      transition={{ duration: 0.35, delay: index * 0.06 }}
+      whileHover={{ y: -2 }}
     >
-      <div className="flex items-start justify-between mb-4">
+      <div className="mb-4 flex items-start justify-between gap-4">
         <div>
-          <h3 className="st-title text-2xl font-bold text-neon-red mb-2">Module {index + 1}: {module.name}</h3>
-          <p className="st-retro text-red-300/60">{module.duration}</p>
+          <h3 className="text-2xl font-semibold text-white">Module {index + 1}: {module.name}</h3>
+          <p className="mt-1 text-sm text-slate-400">{module.duration}</p>
         </div>
-        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center neon-glow-red">
-          <span className="st-title text-xl text-white">{index + 1}</span>
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-sm font-semibold text-cyan-300">
+          {index + 1}
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6 mb-6">
+      <div className="grid gap-6 md:grid-cols-2">
         <div>
-          <h4 className="st-retro text-red-400 font-bold mb-3">Topics Covered:</h4>
+          <h4 className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-200">Topics Covered</h4>
           <ul className="space-y-2">
             {module.topics.map((topic: string, idx: number) => (
-              <li key={idx} className="flex items-start gap-2 text-red-200/70 st-retro">
-                <Check className="w-4 h-4 text-red-500 mt-1 flex-shrink-0" />
+              <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
+                <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-cyan-300" />
                 {topic}
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <h4 className="st-retro text-red-400 font-bold mb-3">Projects:</h4>
+          <h4 className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-200">Projects</h4>
           <ul className="space-y-2">
             {module.projects.map((project: string, idx: number) => (
-              <li key={idx} className="flex items-start gap-2 text-red-200/70 st-retro">
-                <ChevronRight className="w-4 h-4 text-yellow-500 mt-1 flex-shrink-0" />
+              <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
+                <ChevronRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-300" />
                 {project}
               </li>
             ))}
@@ -50,3 +49,4 @@ export default function RoadmapCard({ module, index }: any) {
     </motion.div>
   )
 }
+

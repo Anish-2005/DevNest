@@ -57,3 +57,4 @@ export default function PricingCard({ plan, index }: any) {
     </motion.div>
   )
 }
+

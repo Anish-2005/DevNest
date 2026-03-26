@@ -39,3 +39,4 @@ export default function StartJourneyButton({ pathId, pathTitle, gradient }: { pa
     </button>
   )
 }
+

@@ -7,3 +7,4 @@ export default function PathDetailHero({ path }: { path: any }) {
     </div>
   )
 }
+

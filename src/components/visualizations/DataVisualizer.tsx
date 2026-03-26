@@ -10,67 +10,41 @@ interface Step {
 }
 
 export function DataVisualizer({ roadmapData }: { roadmapData: Step[] }) {
-  const chartData = useMemo(() => {
-    return roadmapData.map((step) => ({
-      name: step.name.split(" ")[0],
-      progress: step.progress,
-      fullName: step.name,
-    }))
-  }, [roadmapData])
-
   const radarData = useMemo(() => {
     return roadmapData.map((step) => ({
       subject: step.name.split(" ")[0],
-      A: step.progress,
+      progress: step.progress,
       fullMark: 100,
     }))
   }, [roadmapData])
 
   return (
     <motion.div
-      className="w-full h-full flex items-center justify-center relative"
+      className="relative flex h-full w-full items-center justify-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.4 }}
     >
-      {/* Eerie red glow behind chart */}
-      <motion.div
-        className="absolute inset-0 bg-red-900/10 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{ duration: 3, repeat: Infinity }}
-      />
-      
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={280}>
         <RadarChart data={radarData}>
-          <PolarGrid 
-            stroke="rgba(255, 0, 0, 0.15)" 
-            strokeWidth={1.5}
+          <PolarGrid stroke="rgba(148, 163, 184, 0.35)" strokeWidth={1} />
+          <PolarAngleAxis
+            dataKey="subject"
+            stroke="rgba(148, 163, 184, 0.85)"
+            tick={{ fill: "rgba(203, 213, 225, 0.95)", fontSize: 12, fontFamily: "var(--font-manrope)" }}
           />
-          <PolarAngleAxis 
-            dataKey="subject" 
-            stroke="rgba(255, 0, 0, 0.6)" 
-            tick={{ fill: 'rgba(255, 100, 100, 0.8)', fontSize: 12, fontFamily: 'VT323, monospace' }}
-          />
-          <PolarRadiusAxis 
-            stroke="rgba(139, 0, 0, 0.4)" 
-            tick={{ fill: 'rgba(255, 0, 0, 0.5)', fontFamily: 'VT323, monospace' }}
+          <PolarRadiusAxis
+            stroke="rgba(100, 116, 139, 0.5)"
+            tick={{ fill: "rgba(148, 163, 184, 0.75)", fontFamily: "var(--font-manrope)", fontSize: 11 }}
           />
           <Radar
-            name="Escape Progress"
-            dataKey="A"
-            stroke="rgb(255, 0, 0)"
+            name="Progress"
+            dataKey="progress"
+            stroke="rgb(56, 189, 248)"
             strokeWidth={2}
-            fill="rgba(139, 0, 0, 0.2)"
-            fillOpacity={0.6}
-            dot={{ 
-              fill: "rgb(255, 235, 59)", 
-              stroke: "rgb(255, 0, 0)", 
-              strokeWidth: 2, 
-              r: 4 
-            }}
+            fill="rgba(56, 189, 248, 0.24)"
+            fillOpacity={0.9}
+            dot={{ fill: "rgb(125, 211, 252)", stroke: "rgb(14, 165, 233)", strokeWidth: 1.5, r: 3.5 }}
           />
         </RadarChart>
       </ResponsiveContainer>
@@ -79,3 +53,4 @@ export function DataVisualizer({ roadmapData }: { roadmapData: Step[] }) {
 }
 
 export default DataVisualizer
+

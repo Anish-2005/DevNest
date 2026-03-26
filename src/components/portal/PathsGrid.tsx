@@ -9,3 +9,4 @@ export default function PathsGrid({ learningPaths }: { learningPaths: any[] }) {
     </div>
   )
 }
+

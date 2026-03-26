@@ -16,3 +16,4 @@ export default function PathOverview({ path }: { path: any }) {
     </div>
   )
 }
+

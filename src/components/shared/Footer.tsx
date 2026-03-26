@@ -69,9 +69,10 @@ export function Footer() {
         </div>
 
         <div className="border-t border-slate-700/60 pt-8 text-center">
-          <p className="text-sm text-slate-400">© 2026 DevNest. All rights reserved.</p>
+          <p className="text-sm text-slate-400">Â© 2026 DevNest. All rights reserved.</p>
         </div>
       </div>
     </footer>
   )
 }
+

@@ -151,3 +151,4 @@ function AuthArea({ compact = false }: AuthAreaProps) {
     </div>
   )
 }
+

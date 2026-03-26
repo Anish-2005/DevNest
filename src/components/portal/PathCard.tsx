@@ -63,3 +63,4 @@ export default function PathCard({ path }: { path: any }) {
     </div>
   )
 }
+

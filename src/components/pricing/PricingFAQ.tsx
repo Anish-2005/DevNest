@@ -47,3 +47,4 @@ export default function PricingFAQ() {
     </motion.div>
   )
 }
+

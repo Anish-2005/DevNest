@@ -5,7 +5,7 @@ import { Feature } from "@/data/features"
 
 export function FeaturesGrid({ features }: { features: Feature[] }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+    <div className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {features.map((f, i) => (
         <FeatureCard key={i} feature={f} index={i} />
       ))}
@@ -14,3 +14,4 @@ export function FeaturesGrid({ features }: { features: Feature[] }) {
 }
 
 export default FeaturesGrid
+
