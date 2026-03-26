@@ -2,7 +2,6 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Header } from "@/components/shared/Header"
 import { Footer } from "@/components/shared/Footer"
-import { BackgroundClient } from "@/components/background/BackgroundClient"
 import StartJourneyButton from "@/components/portal/StartJourneyButton"
 import PathDetailHero from "@/components/portal/PathDetailHero"
 import PathOverview from "@/components/portal/PathOverview"
@@ -27,28 +26,24 @@ type Path = {
   gradient?: string
 }
 
-// use centralized learningPaths from data file
-
 export default async function PathPage({ params }: { params: Promise<{ id: string }> | { id: string } }) {
   const resolvedParams = await params
   const path = learningPaths.find((p) => p.id === resolvedParams.id)
   if (!path) return notFound()
 
   return (
-    <div className="relative w-full min-h-screen bg-[#0a0a0a] text-white overflow-hidden scanlines vhs-effect">
-      <BackgroundClient />
+    <div className="app-page">
       <Header />
 
-      <main className="max-w-5xl mx-auto px-4 py-20">
-        <PathDetailHero path={path} />
-
-        <PathOverview path={path} />
+      <main className="mx-auto w-full max-w-5xl px-4 py-14 sm:px-6 sm:py-16">
+        <PathDetailHero path={path as Path} />
+        <PathOverview path={path as Path} />
 
         <section className="mb-8">
-          <h3 className="st-retro font-bold text-red-300 mb-4">Core Skills</h3>
+          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-200">Core Skills</h3>
           <div className="flex flex-wrap gap-2">
             {path.skills.map((s) => (
-              <span key={s} className="px-3 py-1 rounded-full bg-red-900/20 border border-red-700/30 text-red-200 text-xs st-retro">{s}</span>
+              <span key={s} className="chip">{s}</span>
             ))}
           </div>
         </section>
@@ -60,7 +55,7 @@ export default async function PathPage({ params }: { params: Promise<{ id: strin
         </div>
 
         <div className="mt-6">
-          <Link href="/portal" className="st-retro text-sm text-red-300/70 hover:text-neon-red">← Back to Portal</Link>
+          <Link href="/portal" className="text-sm text-slate-400 hover:text-sky-200">? Back to portal</Link>
         </div>
       </main>
 
@@ -68,5 +63,3 @@ export default async function PathPage({ params }: { params: Promise<{ id: strin
     </div>
   )
 }
-
-

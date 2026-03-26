@@ -1,151 +1,72 @@
 "use client"
 
-import React from "react"
 import Link from "next/link"
 import { motion, Variants } from "framer-motion"
-import { Zap, ChevronRight, ArrowRight, Radio } from "lucide-react"
-
-/* ----------------------------------
-   Animation Variants (STRICTLY TYPED)
------------------------------------*/
+import { ArrowRight, BookOpen, CheckCircle2 } from "lucide-react"
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2,
-      when: "beforeChildren",
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
     },
   },
 }
 
 const itemVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 30,
-  },
+  hidden: { opacity: 0, y: 18 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 }
-
-const buttonVariants: Variants = {
-  idle: { scale: 1 },
-  hover: {
-    scale: 1.06,
-    y: -4,
-    boxShadow: "0px 0px 40px rgba(185, 28, 28, 0.7)",
-  },
-  tap: { scale: 0.95 },
-}
-
-/* ----------------------------------
-   Component
------------------------------------*/
 
 export default function HomeHero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-black">
-      
-      {/* Ambient portal glow */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-[700px] h-[700px] rounded-full bg-red-700/20 blur-[140px] animate-pulse" />
-      </div>
-
-      {/* Optional noise overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-[url('/noise.png')] opacity-[0.03]" />
-
+    <section className="section-block">
       <motion.div
-        className="relative z-10 max-w-6xl mx-auto text-center"
+        className="surface-card overflow-hidden p-8 sm:p-12"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* Badge */}
-        <motion.div variants={itemVariants} className="mb-8">
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-red-700/40 bg-red-900/20 text-red-200 text-sm tracking-widest">
-            <Radio className="w-4 h-4 animate-pulse" />
-            TRANSMISSION RECEIVED
-          </span>
-        </motion.div>
+        <motion.span variants={itemVariants} className="badge-pill">
+          <CheckCircle2 className="h-4 w-4" />
+          Production-Ready Learning Paths
+        </motion.span>
 
-        {/* Heading */}
-        <motion.h1
-          variants={itemVariants}
-          className="text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight"
-        >
-          Learn Web Dev
-          <br />
-          <span className="bg-gradient-to-r from-red-500 via-red-600 to-yellow-500 bg-clip-text text-transparent">
-            Beyond Reality
-          </span>
+        <motion.h1 variants={itemVariants} className="mt-6 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          Build practical engineering skills that translate directly to real-world delivery.
         </motion.h1>
 
-        {/* Subtitle */}
-        <motion.p
-          variants={itemVariants}
-          className="text-xl md:text-2xl text-red-200/70 mb-14 max-w-3xl mx-auto leading-relaxed"
-        >
-          The signal is unstable.  
-          The code is alive.  
-          Step into a parallel dimension where learning adapts, tracks, and evolves.
+        <motion.p variants={itemVariants} className="mt-5 max-w-3xl text-base leading-relaxed text-slate-300 sm:text-lg">
+          DevNest combines structured curriculum, hands-on projects, and progress analytics to help you move from fundamentals to confident execution.
         </motion.p>
 
-        {/* CTAs */}
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col md:flex-row gap-6 justify-center"
-        >
-          <Link href="/portal">
-            <motion.button
-              variants={buttonVariants}
-              initial="idle"
-              whileHover="hover"
-              whileTap="tap"
-              className="px-10 py-4 rounded-lg bg-gradient-to-r from-red-700 to-red-900 font-bold text-lg text-white flex items-center gap-3"
-            >
-              Enter the Portal
-              <ChevronRight className="w-5 h-5" />
-            </motion.button>
+        <motion.div variants={itemVariants} className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <Link href="/portal" className="btn-primary">
+            Explore Learning Paths
+            <ArrowRight className="h-4 w-4" />
           </Link>
-
-          <motion.button
-            variants={buttonVariants}
-            initial="idle"
-            whileHover="hover"
-            whileTap="tap"
-            className="px-10 py-4 rounded-lg border-2 border-red-700/50 font-bold text-lg text-red-200 flex items-center gap-3"
-          >
-            Watch the Signal
-            <ArrowRight className="w-5 h-5" />
-          </motion.button>
+          <Link href="/roadmaps" className="btn-secondary">
+            View Roadmaps
+            <BookOpen className="h-4 w-4" />
+          </Link>
         </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-28"
-          variants={containerVariants}
-        >
+        <motion.div variants={itemVariants} className="mt-10 grid gap-4 sm:grid-cols-3">
           {[
-            { value: "50K+", label: "Connected Minds" },
-            { value: "200+", label: "Learning Paths" },
-            { value: "99%", label: "Completion Rate" },
-          ].map((stat, index) => (
-            <motion.div key={index} variants={itemVariants} className="text-center">
-              <div className="text-4xl font-bold bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent">
-                {stat.value}
-              </div>
-              <div className="text-red-300/60 text-sm mt-3 tracking-widest">
-                {stat.label}
-              </div>
-            </motion.div>
+            { value: "50K+", label: "Active learners" },
+            { value: "200+", label: "Guided modules" },
+            { value: "4.9/5", label: "Learner rating" },
+          ].map((stat) => (
+            <div key={stat.label} className="rounded-xl border border-slate-700/70 bg-slate-900/50 p-4">
+              <p className="text-2xl font-semibold text-white">{stat.value}</p>
+              <p className="mt-1 text-sm text-slate-400">{stat.label}</p>
+            </div>
           ))}
         </motion.div>
       </motion.div>
