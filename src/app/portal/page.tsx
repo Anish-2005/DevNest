@@ -12,8 +12,8 @@ export default function PortalPage() {
 
       <main className="page-container py-14 sm:py-16">
         <PortalHero
-          title="Choose a Career Path"
-          subtitle="Explore structured tracks designed to help you build practical, job-ready engineering skills."
+          title="Enter The Learning Portal"
+          subtitle="Select your path through the darkness. Each journey leads to power, knowledge, and mastery."
         />
         <PathsGrid learningPaths={learningPaths} />
         <PortalCTA />

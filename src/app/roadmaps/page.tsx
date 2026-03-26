@@ -22,14 +22,14 @@ export default function RoadmapsPage() {
 
         <div className="space-y-8">
           <div className="surface-card p-8 sm:p-10">
-            <h2 className="text-3xl font-semibold tracking-tight text-white">{roadmaps[activeRoadmap].title}</h2>
-            <p className="mt-3 text-base text-slate-300 sm:text-lg">{roadmaps[activeRoadmap].description}</p>
+            <h2 className="st-title text-3xl">{roadmaps[activeRoadmap].title}</h2>
+            <p className="st-retro mt-3 text-base sm:text-lg">{roadmaps[activeRoadmap].description}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="chip">
-                <span className="mr-1 text-slate-400">Duration:</span>{roadmaps[activeRoadmap].duration}
+                <span className="mr-1 text-red-100/65">Duration:</span>{roadmaps[activeRoadmap].duration}
               </div>
               <div className="chip">
-                <span className="mr-1 text-slate-400">Level:</span>{roadmaps[activeRoadmap].level}
+                <span className="mr-1 text-red-100/65">Level:</span>{roadmaps[activeRoadmap].level}
               </div>
             </div>
           </div>

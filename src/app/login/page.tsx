@@ -51,46 +51,46 @@ export default function LoginPage() {
         className="mx-auto grid w-full max-w-5xl gap-6 md:grid-cols-2"
       >
         <div className="surface-card p-8 md:p-10">
-          <span className="badge-pill">Welcome Back</span>
-          <h1 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Continue learning with DevNest</h1>
-          <p className="mt-4 text-sm leading-relaxed text-slate-300">
-            Access your learning tracks, hands-on projects, and progress analytics in one place.
+          <span className="badge-pill">Signal Reconnected</span>
+          <h1 className="st-title mt-5 text-3xl sm:text-4xl">Welcome Back To Hawkins Lab</h1>
+          <p className="st-retro mt-4 text-sm leading-relaxed">
+            Re-enter your dimensional roadmap, haunted projects, and progress telemetry.
           </p>
 
-          <ul className="mt-8 space-y-3 text-sm text-slate-200">
+          <ul className="mt-8 space-y-3 text-sm text-red-100/90">
             <li className="flex items-start gap-3">
-              <span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />
-              Personalized roadmaps and milestone tracking.
+              <span className="mt-2 h-2 w-2 rounded-full bg-red-400" />
+              Personalized escape routes and milestone tracking.
             </li>
             <li className="flex items-start gap-3">
-              <span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />
-              Secure access with email/password or Google.
+              <span className="mt-2 h-2 w-2 rounded-full bg-red-400" />
+              Secure entry via email/password or Google.
             </li>
             <li className="flex items-start gap-3">
-              <span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />
-              Practical exercises built for real engineering workflows.
+              <span className="mt-2 h-2 w-2 rounded-full bg-red-400" />
+              Cursed labs built for real engineering battles.
             </li>
           </ul>
 
-          <p className="mt-8 text-xs text-slate-400">
+          <p className="mt-8 text-xs text-red-100/65">
             New to DevNest?{" "}
-            <Link href="/" className="underline decoration-slate-500 underline-offset-2 hover:text-red-200">
-              Explore the platform
+            <Link href="/" className="underline decoration-red-700/40 underline-offset-2 hover:text-red-100">
+              Enter as a new soul
             </Link>
           </p>
         </div>
 
         <div className="surface-card p-8 md:p-10">
           <div className="mb-6">
-            <h2 className="text-2xl font-semibold text-white">Sign in</h2>
-            <p className="mt-2 text-sm text-slate-300">Use your account to continue.</p>
+            <h2 className="st-title text-2xl">Sign In</h2>
+            <p className="st-retro mt-2 text-sm">Use your account to cross the threshold.</p>
           </div>
 
           <form onSubmit={submit} className="space-y-4">
             <label className="block">
-              <span className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-slate-300">Email</span>
+              <span className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-red-100/80">Email</span>
               <div className="relative">
-                <Mail className="pointer-events-none absolute left-3 top-3.5 h-4 w-4 text-slate-400" />
+                <Mail className="pointer-events-none absolute left-3 top-3.5 h-4 w-4 text-red-100/60" />
                 <input
                   aria-label="Email"
                   value={email}
@@ -103,9 +103,9 @@ export default function LoginPage() {
             </label>
 
             <label className="block">
-              <span className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-slate-300">Password</span>
+              <span className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-red-100/80">Password</span>
               <div className="relative">
-                <Lock className="pointer-events-none absolute left-3 top-3.5 h-4 w-4 text-slate-400" />
+                <Lock className="pointer-events-none absolute left-3 top-3.5 h-4 w-4 text-red-100/60" />
                 <input
                   aria-label="Password"
                   type="password"
@@ -122,7 +122,7 @@ export default function LoginPage() {
 
             <div className="flex flex-col gap-3 sm:flex-row">
               <button type="submit" disabled={loading} className="btn-primary flex-1">
-                {loading ? "Signing in..." : "Sign in"}
+                {loading ? "Crossing..." : "Sign In"}
                 <ArrowRight className="h-4 w-4" />
               </button>
 
@@ -137,16 +137,16 @@ export default function LoginPage() {
               </button>
             </div>
 
-            <div className="flex items-center justify-between text-xs text-slate-400">
+            <div className="flex items-center justify-between text-xs text-red-100/65">
               <label className="flex items-center gap-2">
                 <input type="checkbox" className="h-4 w-4 accent-red-700" />
                 Remember me
               </label>
-              <Link href="/" className="underline hover:text-red-200">Forgot password?</Link>
+              <Link href="/" className="underline hover:text-red-100">Forgot password?</Link>
             </div>
           </form>
 
-          <p className="mt-6 text-center text-xs text-slate-400">
+          <p className="mt-6 text-center text-xs text-red-100/60">
             By signing in, you agree to DevNest's <Link href="/" className="underline">terms</Link> and <Link href="/" className="underline">privacy policy</Link>.
           </p>
         </div>
@@ -154,4 +154,3 @@ export default function LoginPage() {
     </div>
   )
 }
-

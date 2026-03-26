@@ -132,9 +132,9 @@ export function ThreeScene() {
     for (let i = 0; i < 15; i++) {
       const geom = shapeGeometries[Math.floor(Math.random() * shapeGeometries.length)]
       const mat = new THREE.MeshStandardMaterial({
-        color: Math.random() > 0.5 ? 0x8b5cf6 : 0x06b6d4,
+        color: Math.random() > 0.5 ? 0x7a0d16 : 0xffb347,
         transparent: true,
-        opacity: 0.15,
+        opacity: 0.2,
         wireframe: true
       })
       const shape = new THREE.Mesh(geom, mat)

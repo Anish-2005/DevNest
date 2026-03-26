@@ -41,7 +41,7 @@ export default function HomeFeatures({ features }: any) {
                 <Icon className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-300">{feature.description}</p>
+              <p className="st-retro mt-3 text-sm leading-relaxed">{feature.description}</p>
             </motion.div>
           )
         })}

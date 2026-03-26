@@ -40,7 +40,7 @@ export default async function PathPage({ params }: { params: Promise<{ id: strin
         <PathOverview path={path as Path} />
 
         <section className="mb-8">
-          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-200">Core Skills</h3>
+          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-red-100">Core Skills</h3>
           <div className="flex flex-wrap gap-2">
             {path.skills.map((s) => (
               <span key={s} className="chip">{s}</span>
@@ -55,7 +55,7 @@ export default async function PathPage({ params }: { params: Promise<{ id: strin
         </div>
 
         <div className="mt-6">
-          <Link href="/portal" className="text-sm text-slate-400 hover:text-red-200">? Back to portal</Link>
+          <Link href="/portal" className="text-sm text-red-100/70 hover:text-red-100">← Back to Portal</Link>
         </div>
       </main>
 
