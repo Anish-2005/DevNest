@@ -6,6 +6,7 @@ import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 
 import { auth } from "@/lib/firebase"
 import { Mail, Lock, LogIn, ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
+import BrandIcon from "@/components/shared/BrandIcon"
 
 export default function LoginPage() {
   const router = useRouter()
@@ -51,6 +52,9 @@ export default function LoginPage() {
         className="mx-auto grid w-full max-w-5xl gap-6 md:grid-cols-2"
       >
         <div className="surface-card p-8 md:p-10">
+          <div className="neon-glow-red inline-flex h-10 w-10 items-center justify-center rounded-lg">
+            <BrandIcon className="h-6 w-6" />
+          </div>
           <span className="badge-pill">Signal Reconnected</span>
           <h1 className="st-title mt-5 text-3xl sm:text-4xl">Welcome Back To Hawkins Lab</h1>
           <p className="st-retro mt-4 text-sm leading-relaxed">

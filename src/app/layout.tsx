@@ -1,33 +1,39 @@
 import type { Metadata } from "next";
-import { Cinzel, IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
+import { Cormorant_Garamond, Space_Mono, Work_Sans } from "next/font/google";
 import "./globals.css";
 import AuthGuard from "@/components/auth/AuthGuard"
 import { BackgroundClient } from "@/components/background/BackgroundClient";
 import { CursorTrail } from "@/components/effects/CursorTrail";
 
-const spaceGrotesk = Space_Grotesk({
+const workSans = Work_Sans({
   variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const ibmPlexMono = IBM_Plex_Mono({
+const spaceMono = Space_Mono({
   variable: "--font-retro-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
-const cinzel = Cinzel({
+const cormorant = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["500", "600", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "DevNest - Enter The Upside Down Of Learning",
   description: "A cinematic Stranger Things-inspired developer portal with eerie roadmaps, cursed features, and neon learning paths.",
+  icons: {
+    icon: [{ url: "/brand-icon.svg", type: "image/svg+xml" }],
+    shortcut: ["/brand-icon.svg"],
+    apple: [{ url: "/brand-icon.svg" }],
+  },
 };
 
 export default function RootLayout({
@@ -38,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${spaceGrotesk.variable} ${ibmPlexMono.variable} ${cinzel.variable} font-sans`}
+        className={`${workSans.variable} ${spaceMono.variable} ${cormorant.variable} font-sans`}
       >
         <BackgroundClient />
         <CursorTrail />

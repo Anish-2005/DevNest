@@ -217,14 +217,14 @@
 
   .section-title {
     font-family: var(--font-display), ui-serif, Georgia, serif;
-    @apply text-4xl font-semibold uppercase tracking-[0.08em] text-red-100 sm:text-5xl md:text-6xl;
+    @apply text-4xl font-semibold leading-tight tracking-[0.03em] text-red-100 sm:text-5xl md:text-6xl;
     text-shadow:
       0 0 10px rgba(210, 20, 37, 0.35),
       0 0 24px rgba(210, 20, 37, 0.22);
   }
 
   .section-subtitle {
-    @apply mx-auto mt-4 max-w-3xl text-base text-red-100/70 sm:text-lg;
+    @apply mx-auto mt-4 max-w-3xl text-base leading-relaxed text-red-100/72 sm:text-lg;
   }
 
   .surface-card {
@@ -242,7 +242,7 @@
   }
 
   .badge-pill {
-    @apply inline-flex items-center gap-2 rounded-full border border-red-600/50 bg-red-900/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-red-100;
+    @apply inline-flex items-center gap-2 rounded-full border border-red-600/50 bg-red-900/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-red-100;
     animation: flicker 5s infinite;
   }
 
@@ -262,16 +262,17 @@
 
   .st-title {
     font-family: var(--font-display), ui-serif, Georgia, serif;
-    @apply font-semibold uppercase tracking-[0.08em] text-red-100;
+    @apply font-semibold leading-tight tracking-[0.03em] text-red-100;
     text-shadow:
       0 0 10px rgba(210, 20, 37, 0.4),
       0 0 22px rgba(210, 20, 37, 0.2);
   }
 
   .st-retro {
-    @apply text-red-100/70;
-    font-family: var(--font-retro-mono), ui-monospace, monospace;
-    letter-spacing: 0.02em;
+    @apply text-red-100/72;
+    font-family: var(--font-body), ui-sans-serif, sans-serif;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
   }
 
   .st-flicker {

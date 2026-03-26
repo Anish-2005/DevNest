@@ -1,10 +1,11 @@
 "use client"
 import { motion } from "framer-motion"
-import { Code2, LogOut, Menu, X, ChevronDown } from "lucide-react"
+import { LogOut, Menu, X, ChevronDown } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import { onAuthStateChanged } from "firebase/auth"
 import { auth, signOutUser } from "@/lib/firebase"
+import BrandIcon from "@/components/shared/BrandIcon"
 
 const navItems = [
   { label: "Portal", href: "/portal" },
@@ -24,9 +25,7 @@ export function Header() {
     >
       <div className="page-container flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-3">
-          <div className="neon-glow-red flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-900">
-            <Code2 className="h-5 w-5 text-red-100" />
-          </div>
+          <BrandIcon className="h-8 w-8" />
           <div className="leading-tight">
             <p className="st-title st-flicker text-lg md:text-2xl">DevNest</p>
             <p className="st-retro hidden text-[11px] uppercase sm:block">Hawkins Learning Lab</p>

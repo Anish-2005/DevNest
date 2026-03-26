@@ -1,7 +1,8 @@
 "use client"
 import { motion } from "framer-motion"
-import { Code2, Github, Twitter, Linkedin } from "lucide-react"
+import { Github, Twitter, Linkedin } from "lucide-react"
 import Link from "next/link"
+import BrandIcon from "@/components/shared/BrandIcon"
 
 export function Footer() {
   return (
@@ -10,9 +11,7 @@ export function Footer() {
         <div className="mb-12 grid gap-12 md:grid-cols-4">
           <div>
             <div className="mb-4 flex items-center gap-2">
-              <div className="neon-glow-red flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-red-700 to-red-900">
-                <Code2 className="h-4 w-4 text-red-100" />
-              </div>
+              <BrandIcon className="h-6 w-6" />
               <span className="st-title text-xl">DevNest</span>
             </div>
             <p className="st-retro text-sm">

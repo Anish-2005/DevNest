@@ -1,0 +1,36 @@
+import React from "react"
+
+type BrandIconProps = {
+  className?: string
+  title?: string
+}
+
+export default function BrandIcon({ className, title = "DevNest brand mark" }: BrandIconProps) {
+  return (
+    <svg
+      viewBox="0 0 256 256"
+      role="img"
+      aria-label={title}
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect x="14" y="14" width="228" height="228" rx="56" fill="#0b0506" stroke="#4f1a1f" strokeWidth="10" />
+      <path
+        d="M72 56V200H120C167 200 202 165 202 128C202 91 167 56 120 56H72Z"
+        fill="none"
+        stroke="#e84552"
+        strokeWidth="16"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M98 84V172M98 84L156 172M156 84V172"
+        fill="none"
+        stroke="#ffc16b"
+        strokeWidth="14"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
