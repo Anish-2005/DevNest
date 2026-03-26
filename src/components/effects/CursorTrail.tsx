@@ -40,7 +40,7 @@ export function CursorTrail() {
   if (!enabled) return null
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-50">
+    <div className="fixed inset-0 pointer-events-none z-40">
       <AnimatePresence>
         {trails.map((trail, i) => (
           <motion.div
@@ -51,10 +51,10 @@ export function CursorTrail() {
               top: trail.y - 6,
               background: `radial-gradient(circle, ${
                 i % 3 === 0
-                  ? "rgba(139, 92, 246, 0.6)"
+                  ? "rgba(210, 20, 37, 0.64)"
                   : i % 3 === 1
-                  ? "rgba(6, 182, 212, 0.6)"
-                  : "rgba(236, 72, 153, 0.6)"
+                  ? "rgba(255, 95, 95, 0.58)"
+                  : "rgba(255, 186, 90, 0.56)"
               }, transparent)`,
             }}
             initial={{ scale: 1, opacity: 0.8 }}

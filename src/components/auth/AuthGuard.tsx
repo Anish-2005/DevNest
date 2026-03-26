@@ -31,8 +31,8 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
     return (
       <div className="flex min-h-screen items-center justify-center">
         <div className="text-center">
-          <div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-sky-500 border-t-cyan-300" />
-          <p className="mt-4 text-sm text-slate-300">Checking authentication...</p>
+          <div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-red-700 border-t-amber-300" />
+          <p className="mt-4 text-sm text-red-100/80">Tuning the portal frequency...</p>
         </div>
       </div>
     )
