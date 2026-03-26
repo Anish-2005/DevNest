@@ -11,14 +11,14 @@ export default function PricingCTA() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      <h3 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Need help selecting the right plan?</h3>
-      <p className="mx-auto mt-4 max-w-2xl text-base text-slate-300 sm:text-lg">
-        Talk to our team for guidance on individual, student, or organization pricing.
+      <h3 className="st-title text-3xl sm:text-4xl">Still Wandering In The Darkness?</h3>
+      <p className="st-retro mx-auto mt-4 max-w-2xl text-base sm:text-lg">
+        Talk to our lost-souls support team for guidance before the gate shuts.
       </p>
       <div className="mt-8">
         <Link href="/" className="btn-primary">
           <MessageSquare className="h-4 w-4" />
-          Contact Support
+          Contact The Watchers
         </Link>
       </div>
     </motion.div>

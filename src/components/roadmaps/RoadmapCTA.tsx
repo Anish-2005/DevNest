@@ -11,13 +11,13 @@ export default function RoadmapCTA() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      <h3 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Ready to start a focused roadmap?</h3>
-      <p className="mx-auto mt-4 max-w-2xl text-base text-slate-300 sm:text-lg">
-        Pick a track, follow the modules, and build a portfolio that demonstrates real capability.
+      <h3 className="st-title text-3xl sm:text-4xl">Ready To Begin Your Journey?</h3>
+      <p className="st-retro mx-auto mt-4 max-w-2xl text-base sm:text-lg">
+        Choose your path and start escaping the darkness tonight.
       </p>
       <div className="mt-8">
         <Link href="/portal" className="btn-primary">
-          Start a learning path
+          Start Your Escape
           <ArrowRight className="h-4 w-4" />
         </Link>
       </div>

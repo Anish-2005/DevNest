@@ -6,7 +6,7 @@ export default function PortalHero({ title, subtitle }: { title: string; subtitl
       <div className="mb-6">
         <span className="badge-pill">
           <Compass className="h-4 w-4" />
-          Learning Portal
+          Dimensional Portal
         </span>
       </div>
 

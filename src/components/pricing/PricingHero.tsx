@@ -13,13 +13,13 @@ export default function PricingHero() {
       <motion.div variants={itemVariants} className="mb-6">
         <span className="badge-pill">
           <Wallet className="h-4 w-4" />
-          Transparent Pricing
+          Choose Your Soul Contract
         </span>
       </motion.div>
 
-      <h1 className="section-title">Choose the plan that fits your growth stage</h1>
+      <h1 className="section-title">Pricing From The Underworld</h1>
       <p className="section-subtitle">
-        Flexible plans for individuals and teams. No hidden fees, and you can change plans anytime.
+        Pick your escape tier. No hidden curses, cancel your contract anytime.
       </p>
     </motion.div>
   )

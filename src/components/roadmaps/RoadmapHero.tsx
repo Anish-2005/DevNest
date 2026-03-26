@@ -8,15 +8,15 @@ const itemVariants: any = {
 }
 
 export default function RoadmapHero({
-  title = "Engineering Roadmaps",
-  subtitle = "Follow structured plans built to take you from fundamentals to production confidence.",
+  title = "Twisted Learning Paths",
+  subtitle = "Navigate structured curriculum designed to guide you from the darkness into mastery.",
 }: any) {
   return (
     <motion.div className="section-header" initial="hidden" animate="visible" variants={itemVariants}>
       <motion.div variants={itemVariants} className="mb-6">
         <span className="badge-pill">
           <Map className="h-4 w-4" />
-          Learning Roadmaps
+          Choose Your Escape Route
         </span>
       </motion.div>
 

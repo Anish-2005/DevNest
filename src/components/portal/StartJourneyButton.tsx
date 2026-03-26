@@ -32,10 +32,10 @@ export default function StartJourneyButton({ pathId, pathTitle, gradient }: { pa
   return (
     <button
       onClick={handleStart}
-      className={`inline-flex items-center justify-center rounded-xl bg-gradient-to-r ${gradientClass} px-8 py-3.5 text-sm font-semibold text-white shadow-[0_14px_35px_-18px_rgba(56,189,248,0.85)] transition-transform hover:-translate-y-0.5`}
+      className={`neon-glow-red inline-flex items-center justify-center rounded-xl bg-gradient-to-r ${gradientClass} px-8 py-3.5 text-sm font-semibold text-white shadow-[0_14px_35px_-18px_rgba(210,20,37,0.85)] transition-transform hover:-translate-y-0.5`}
       disabled={loading}
     >
-      {loading ? "Starting..." : "Start journey"}
+      {loading ? "Crossing..." : "Start Journey"}
     </button>
   )
 }
