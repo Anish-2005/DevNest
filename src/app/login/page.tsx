@@ -1,47 +1,51 @@
-"use client"
-import React, { useState } from "react"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
-import { auth } from "@/lib/firebase"
-import { Mail, Lock, LogIn, ArrowRight } from "lucide-react"
-import { motion } from "framer-motion"
-import BrandIcon from "@/components/shared/BrandIcon"
+"use client";
+import React, { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import {
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
+import { auth } from "@/lib/firebase";
+import { Mail, Lock, LogIn, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import BrandIcon from "@/components/shared/BrandIcon";
 
 export default function LoginPage() {
-  const router = useRouter()
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const submit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-    setError(null)
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
     try {
-      await signInWithEmailAndPassword(auth, email, password)
-      router.replace("/")
+      await signInWithEmailAndPassword(auth, email, password);
+      router.replace("/");
     } catch (err: any) {
-      setError(err.message || "Failed to sign in")
+      setError(err.message || "Failed to sign in");
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const signInWithGoogle = async () => {
-    setLoading(true)
-    setError(null)
+    setLoading(true);
+    setError(null);
     try {
-      const provider = new GoogleAuthProvider()
-      await signInWithPopup(auth, provider)
-      router.replace("/")
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth, provider);
+      router.replace("/");
     } catch (err: any) {
-      setError(err.message || "Google sign-in failed")
+      setError(err.message || "Google sign-in failed");
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <div className="app-page flex items-center px-6 py-14">
@@ -56,9 +60,12 @@ export default function LoginPage() {
             <BrandIcon className="h-6 w-6" />
           </div>
           <span className="badge-pill">Signal Reconnected</span>
-          <h1 className="st-title mt-5 text-3xl sm:text-4xl">Welcome Back To Hawkins Lab</h1>
+          <h1 className="st-title mt-5 text-3xl sm:text-4xl">
+            Welcome Back To Hawkins Lab
+          </h1>
           <p className="st-retro mt-4 text-sm leading-relaxed">
-            Re-enter your dimensional roadmap, haunted projects, and progress telemetry.
+            Re-enter your dimensional roadmap, haunted projects, and progress
+            telemetry.
           </p>
 
           <ul className="mt-8 space-y-3 text-sm text-red-100/90">
@@ -78,7 +85,10 @@ export default function LoginPage() {
 
           <p className="mt-8 text-xs text-red-100/65">
             New to DevNest?{" "}
-            <Link href="/" className="underline decoration-red-700/40 underline-offset-2 hover:text-red-100">
+            <Link
+              href="/"
+              className="underline decoration-red-700/40 underline-offset-2 hover:text-red-100"
+            >
               Enter as a new soul
             </Link>
           </p>
@@ -87,12 +97,16 @@ export default function LoginPage() {
         <div className="surface-card p-8 md:p-10">
           <div className="mb-6">
             <h2 className="st-title text-2xl">Sign In</h2>
-            <p className="st-retro mt-2 text-sm">Use your account to cross the threshold.</p>
+            <p className="st-retro mt-2 text-sm">
+              Use your account to cross the threshold.
+            </p>
           </div>
 
           <form onSubmit={submit} className="space-y-4">
             <label className="block">
-              <span className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-red-100/80">Email</span>
+              <span className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-red-100/80">
+                Email
+              </span>
               <div className="relative">
                 <Mail className="pointer-events-none absolute left-3 top-3.5 h-4 w-4 text-red-100/60" />
                 <input
@@ -107,7 +121,9 @@ export default function LoginPage() {
             </label>
 
             <label className="block">
-              <span className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-red-100/80">Password</span>
+              <span className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-red-100/80">
+                Password
+              </span>
               <div className="relative">
                 <Lock className="pointer-events-none absolute left-3 top-3.5 h-4 w-4 text-red-100/60" />
                 <input
@@ -115,14 +131,21 @@ export default function LoginPage() {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••"
+                  placeholder="********"
                   className="form-input pl-10"
                   required
                 />
               </div>
             </label>
 
-            {error && <div role="alert" className="rounded-lg border border-red-500/40 bg-red-500/10 px-3 py-2 text-sm text-red-200">{error}</div>}
+            {error && (
+              <div
+                role="alert"
+                className="rounded-lg border border-red-500/40 bg-red-500/10 px-3 py-2 text-sm text-red-200"
+              >
+                {error}
+              </div>
+            )}
 
             <div className="flex flex-col gap-3 sm:flex-row">
               <button type="submit" disabled={loading} className="btn-primary flex-1">
@@ -146,15 +169,25 @@ export default function LoginPage() {
                 <input type="checkbox" className="h-4 w-4 accent-red-700" />
                 Remember me
               </label>
-              <Link href="/" className="underline hover:text-red-100">Forgot password?</Link>
+              <Link href="/" className="underline hover:text-red-100">
+                Forgot password?
+              </Link>
             </div>
           </form>
 
           <p className="mt-6 text-center text-xs text-red-100/60">
-            By signing in, you agree to DevNest's <Link href="/" className="underline">terms</Link> and <Link href="/" className="underline">privacy policy</Link>.
+            By signing in, you agree to DevNest&apos;s{" "}
+            <Link href="/" className="underline">
+              terms
+            </Link>{" "}
+            and{" "}
+            <Link href="/" className="underline">
+              privacy policy
+            </Link>
+            .
           </p>
         </div>
       </motion.div>
     </div>
-  )
+  );
 }
